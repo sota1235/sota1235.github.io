@@ -6,10 +6,17 @@ import sitemap from '@astrojs/sitemap';
 
 import react from '@astrojs/react';
 
+import tailwind from '@astrojs/tailwind';
+
 // https://astro.build/config
 export default defineConfig({
     site: 'https://sota1235.com',
-    integrations: [mdx(), sitemap(), react({
-        include: ['**/react/*'],
-    })],
+    integrations: [
+        mdx(),
+        sitemap(),
+        react({
+            include: ['**/react/*'],
+        }),
+        tailwind(),
+    ],
 });
