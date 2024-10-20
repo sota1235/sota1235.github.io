@@ -1,7 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import FormattedDate from '../../components/FormattedDate.astro';
-import Layout from '../../layouts/Base.astro';
+import Layout from '../../layouts/Layout.astro';
 import HeaderText from "../../components/HeaderText.astro";
 
 const posts = (await getCollection('blog')).sort(
@@ -11,7 +11,7 @@ const posts = (await getCollection('blog')).sort(
 
 <Layout>
 	<HeaderText
-		className="my-10"
+		className="my-[60px]"
 	>
 		BLOG
 	</HeaderText>
