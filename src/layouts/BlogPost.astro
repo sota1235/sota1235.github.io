@@ -9,8 +9,10 @@ const { data: { title } } = Astro.props
 ---
 
 <Layout>
-	<article class="prose-base mb-[200px]">
-		<HeaderText className="my-14">{title}</HeaderText>
-		<slot />
-	</article>
+	<div class="max-w-3xl mx-auto">
+		<HeaderText className="my-20 text-3xl">{title}</HeaderText>
+		<article class="prose prose-base mb-[200px] list-inside max-w-none">
+			<slot />
+		</article>
+	</div>
 </Layout>
