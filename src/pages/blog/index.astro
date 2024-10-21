@@ -11,11 +11,11 @@ const posts = (await getCollection('blog')).sort(
 
 <Layout>
 	<HeaderText
-		className="my-[60px]"
+		className="mt-[60px]"
 	>
 		BLOG
 	</HeaderText>
-	<section>
+	<section class="my-[60px]">
 		<ul class="border-t-2 border-[#154B5F]">
 			{
 				posts.map((post) => (
