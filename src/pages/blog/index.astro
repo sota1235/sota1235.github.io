@@ -2,7 +2,7 @@
 import { getCollection } from 'astro:content';
 import FormattedDate from '../../components/FormattedDate.astro';
 import Layout from '../../layouts/Layout.astro';
-import HeaderText from "../../components/HeaderText.astro";
+import PageHeaderText from "../../components/PageHeaderText.astro";
 
 const posts = (await getCollection('blog')).sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
@@ -10,11 +10,9 @@ const posts = (await getCollection('blog')).sort(
 ---
 
 <Layout>
-	<HeaderText
-		className="mt-[60px] text-6xl"
-	>
+	<PageHeaderText>
 		BLOG
-	</HeaderText>
+	</PageHeaderText>
 	<section class="my-[60px]">
 		<ul class="border-t-2 border-[#154B5F]">
 			{
