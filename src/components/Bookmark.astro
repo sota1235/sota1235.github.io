@@ -1,0 +1,16 @@
+---
+const { url, title, description, image } = Astro.props;
+---
+
+<div class="bookmark-container p-4 bg-white border border-gray-200 rounded-lg shadow-md flex items-center">
+    <div class="image-container w-24 h-24 mr-4">
+        <img src={image} alt={title} class="object-cover w-full h-full rounded-md" />
+    </div>
+    <div class="content flex-1">
+        <h3 class="text-lg font-bold text-gray-900 mb-2">{title}</h3>
+        <p class="text-gray-700 text-sm mb-3">{description}</p>
+        <a href={url} class="text-blue-600 hover:underline text-sm" target="_blank" rel="noopener noreferrer">
+          {url}
+        </a>
+    </div>
+</div>
