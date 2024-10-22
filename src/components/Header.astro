@@ -1,13 +1,24 @@
 ---
 import HeaderLink from './HeaderLink.astro';
+import ExternalLinkIcon from "./icons/ExternalLinkIcon.astro";
 ---
 
 <header>
-	<nav class="m-8 h-8 flex justify-end">
-		<div>
-			<HeaderLink href="/">TOP</HeaderLink>
-			<HeaderLink href="/blog">BLOG</HeaderLink>
-			<HeaderLink href="/biography">BIOGRAPHY</HeaderLink>
-		</div>
+	<nav class="m-8 h-8 flex flex-row justify-end">
+		<HeaderLink href="/">TOP</HeaderLink>
+		<HeaderLink href="/blog">BLOG</HeaderLink>
+		<HeaderLink href="/biography">BIOGRAPHY</HeaderLink>
+		<HeaderLink
+			href="https://sota1235.notion.site/README-sota1235-8457ce326b8f4b86aa1739de42891cdb?pvs=74"
+			target="_blank"
+			className="hover:text-black_hover hover:fill-black_hover"
+		>
+			<div class="flex flex-row gap-1.5 items-center">
+				<p>README</p>
+				<ExternalLinkIcon
+					className="w-4 h-4 inline text-black"
+				/>
+			</div>
+		</HeaderLink>
 	</nav>
 </header>
