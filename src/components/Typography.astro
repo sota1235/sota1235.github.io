@@ -1,6 +1,10 @@
 ---
+const { className } = Astro.props
 ---
 
-<p class="text-3xl text-black font-medium">
+<p class:list={[
+	 "text-3xl text-black font-medium",
+	className,
+]}>
 	<slot />
 </p>

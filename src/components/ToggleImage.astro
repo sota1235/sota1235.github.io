@@ -1,0 +1,45 @@
+---
+---
+
+<div class="flex flex-col items-center">
+    <div class="w-64 h-64">
+        <img
+          id="image_2d"
+          src="/biography_2d.jpg"
+          alt="2D icon"
+          class="w-full h-full object-cover"
+        />
+        <img
+          id="image_3d"
+          src="/biography_3d.jpg"
+          alt="3D icon"
+          class="w-full h-full object-cover hidden"
+        />
+    </div>
+
+    <button
+      class="mt-4 px-4 py-2 text-2xl font-bold text-black border-2 border-black hover:bg-[#DDF6FF]"
+    >
+        2D
+    </button>
+</div>
+
+<script>
+    const button = document.querySelector('button');
+    const toggleImage = () => {
+        const icon_2d = document.getElementById('image_2d');
+        const icon_3d = document.getElementById('image_3d');
+        const is2D = !icon_2d.classList.contains('hidden');
+
+        if (is2D) {
+            icon_3d.classList.remove('hidden');
+            icon_2d.classList.add('hidden');
+            button.innerHTML = '3D';
+        } else {
+            icon_2d.classList.remove('hidden');
+            icon_3d.classList.add('hidden');
+            button.innerHTML = '2D';
+        }
+    };
+    button.addEventListener('click', toggleImage);
+</script>
