@@ -21,26 +21,31 @@ import HamburgerIcon from './icons/HamburgerIcon.astro'
         </div>
       </HeaderLink>
     </div>
-    <div class="flex justify-end md:hidden">
-      <HamburgerIcon
-        id="hamburgerIcon"
-        className="inline h-7 fill-black text-black"
-      />
-    </div>
-    <div id="hamburgerMenu" class="mt-4 hidden flex-col gap-2 border-y-2 py-4">
-      <HeaderLink href="/">TOP</HeaderLink>
-      <HeaderLink href="/blog">BLOG</HeaderLink>
-      <HeaderLink href="/biography">BIOGRAPHY</HeaderLink>
-      <HeaderLink
-        href="https://sota1235.notion.site/README-sota1235-8457ce326b8f4b86aa1739de42891cdb?pvs=74"
-        target="_blank"
-        className="hover:fill-black_hover hover:text-black_hover"
+    <div class="flex flex-col md:hidden">
+      <div class="flex flex-col items-end">
+        <HamburgerIcon
+          id="hamburgerIcon"
+          className="inline h-7 fill-black text-black"
+        />
+      </div>
+      <div
+        id="hamburgerMenu"
+        class="mt-4 hidden flex-col gap-2 border-y-2 py-4"
       >
-        <div class="flex flex-row items-center gap-1.5">
-          <p>README</p>
-          <ExternalLinkIcon className="inline h-4 w-4 fill-black" />
-        </div>
-      </HeaderLink>
+        <HeaderLink href="/">TOP</HeaderLink>
+        <HeaderLink href="/blog">BLOG</HeaderLink>
+        <HeaderLink href="/biography">BIOGRAPHY</HeaderLink>
+        <HeaderLink
+          href="https://sota1235.notion.site/README-sota1235-8457ce326b8f4b86aa1739de42891cdb?pvs=74"
+          target="_blank"
+          className="hover:fill-black_hover hover:text-black_hover"
+        >
+          <div class="flex flex-row items-center gap-1.5">
+            <p>README</p>
+            <ExternalLinkIcon className="inline h-4 w-4 fill-black" />
+          </div>
+        </HeaderLink>
+      </div>
     </div>
   </nav>
 </header>
