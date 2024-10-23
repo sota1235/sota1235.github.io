@@ -1,28 +1,22 @@
 ---
 import Layout from '../layouts/Layout.astro'
-import {SITE_DESCRIPTION, SITE_TITLE} from "../consts";
-import Typography from "../components/Typography.astro";
-import PageHeaderText from "../components/PageHeaderText.astro";
+import { SITE_DESCRIPTION, SITE_TITLE } from '../consts'
+import Typography from '../components/Typography.astro'
+import PageHeaderText from '../components/PageHeaderText.astro'
 ---
 
 <Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
-	<PageHeaderText>
-		🦒 sota1235.com!
-	</PageHeaderText>
-	<div class="mb-10">
-		<Typography>
-			🧑‍💻 Software Engineer
-		</Typography>
-		<p class="text-xl md:text-2xl text-black my-3">
-			Mainly working on security and web development.
-		</p>
-	</div>
-	<div class="mb-10">
-		<Typography>
-			🎧 Music lover
-		</Typography>
-		<p class="text-xl md:text-2xl text-black my-3">
-			aiko and J-Rock lover, guitar beginner 🎸
-		</p>
-	</div>
+  <PageHeaderText> 🦒 sota1235.com! </PageHeaderText>
+  <div class="mb-10">
+    <Typography> 🧑‍💻 Software Engineer </Typography>
+    <p class="my-3 text-xl text-black md:text-2xl">
+      Mainly working on security and web development.
+    </p>
+  </div>
+  <div class="mb-10">
+    <Typography> 🎧 Music lover </Typography>
+    <p class="my-3 text-xl text-black md:text-2xl">
+      aiko and J-Rock lover, guitar beginner 🎸
+    </p>
+  </div>
 </Layout>

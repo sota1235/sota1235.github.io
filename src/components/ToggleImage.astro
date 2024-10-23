@@ -1,54 +1,55 @@
 ---
+
 ---
 
 <div class="flex flex-col items-center">
-    <div class="w-64 h-64">
-        <img
-          id="image_2d"
-          src="/biography_2d.jpg"
-          alt="2D icon"
-          class="w-full h-full object-cover"
-        />
-        <img
-          id="image_3d"
-          src="/biography_3d.jpg"
-          alt="3D icon"
-          class="w-full h-full object-cover hidden"
-        />
-    </div>
+  <div class="h-64 w-64">
+    <img
+      id="image_2d"
+      src="/biography_2d.jpg"
+      alt="2D icon"
+      class="h-full w-full object-cover"
+    />
+    <img
+      id="image_3d"
+      src="/biography_3d.jpg"
+      alt="3D icon"
+      class="hidden h-full w-full object-cover"
+    />
+  </div>
 
-    <button
-      class="mt-4 px-4 py-2 text-xl md:text-2xl font-bold text-black border-2 border-black hover:bg-[#DDF6FF]"
-    >
-        2D
-    </button>
+  <button
+    class="mt-4 border-2 border-black px-4 py-2 text-xl font-bold text-black hover:bg-[#DDF6FF] md:text-2xl"
+  >
+    2D
+  </button>
 </div>
 
 <script>
-    const button = document.querySelector('button');
+  const button = document.querySelector('button')
 
-    function updateButtonText(text: string) {
-        if (button === null) {
-            return;
-        }
-
-        button.innerHTML = text;
+  function updateButtonText(text: string) {
+    if (button === null) {
+      return
     }
 
-    const toggleImage = () => {
-        const icon_2d = document.getElementById('image_2d');
-        const icon_3d = document.getElementById('image_3d');
-        const is2D = !icon_2d?.classList.contains('hidden');
+    button.innerHTML = text
+  }
 
-        if (is2D) {
-            icon_3d?.classList.remove('hidden');
-            icon_2d?.classList.add('hidden');
-            updateButtonText('3D');
-        } else {
-            icon_2d?.classList.remove('hidden');
-            icon_3d?.classList.add('hidden');
-            updateButtonText('2D');
-        }
-    };
-    button?.addEventListener('click', toggleImage);
+  const toggleImage = () => {
+    const icon_2d = document.getElementById('image_2d')
+    const icon_3d = document.getElementById('image_3d')
+    const is2D = !icon_2d?.classList.contains('hidden')
+
+    if (is2D) {
+      icon_3d?.classList.remove('hidden')
+      icon_2d?.classList.add('hidden')
+      updateButtonText('3D')
+    } else {
+      icon_2d?.classList.remove('hidden')
+      icon_3d?.classList.add('hidden')
+      updateButtonText('2D')
+    }
+  }
+  button?.addEventListener('click', toggleImage)
 </script>

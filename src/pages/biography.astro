@@ -1,29 +1,25 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import PageHeaderText from "../components/PageHeaderText.astro";
-import ToggleImage from "../components/ToggleImage.astro";
-import Typography from "../components/Typography.astro";
+import Layout from '../layouts/Layout.astro'
+import PageHeaderText from '../components/PageHeaderText.astro'
+import ToggleImage from '../components/ToggleImage.astro'
+import Typography from '../components/Typography.astro'
 ---
 
-<Layout
-	title="BIOGRAPHY"
-	description="Biography of @sota1235"
->
-	<PageHeaderText>
-		BIOGRAPHY
-	</PageHeaderText>
-	<div class="flex flex-col md:flex-row gap-10">
-		<ToggleImage />
-		<div class="flex flex-col gap-3">
-			<Typography className="mb-4">
-				Sota Sugiura (a.k.a @sota1235)
-			</Typography>
-			<Typography className="text-xl">
-				Software Engineer (Web, Security and Frontend)
-			</Typography>
-			<Typography className="text-xl">
-				Working at <a href="https://10x.co.jp/" class="hover:text-black_hover underline">10X, inc.</a>
-			</Typography>
-		</div>
-	</div>
+<Layout title="BIOGRAPHY" description="Biography of @sota1235">
+  <PageHeaderText> BIOGRAPHY </PageHeaderText>
+  <div class="flex flex-col gap-10 md:flex-row">
+    <ToggleImage />
+    <div class="flex flex-col gap-3">
+      <Typography className="mb-4"> Sota Sugiura (a.k.a @sota1235) </Typography>
+      <Typography className="text-xl">
+        Software Engineer (Web, Security and Frontend)
+      </Typography>
+      <Typography className="text-xl">
+        Working at <a
+          href="https://10x.co.jp/"
+          class="underline hover:text-black_hover">10X, inc.</a
+        >
+      </Typography>
+    </div>
+  </div>
 </Layout>

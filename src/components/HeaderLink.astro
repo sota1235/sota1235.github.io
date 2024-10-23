@@ -1,25 +1,27 @@
 ---
-const { href, className, ...props } = Astro.props;
+const { href, className, ...props } = Astro.props
 
-const { pathname } = Astro.url;
-const subpath = pathname.match(/[^\/]+/g);
-const isActive = href === pathname || href === '/' + subpath?.[0];
+const { pathname } = Astro.url
+const subpath = pathname.match(/[^\/]+/g)
+const isActive = href === pathname || href === '/' + subpath?.[0]
 ---
 
-<a href={href} class:list={
-	[
-		'text-black',
-		'font-bold',
-		'text-2xl',
-		'px-2',
-		'hover:text-black_hover',
-		'tracking-wide',
-		"font-['Open Sans', sans-serif']", // TODO: theme
-		{
-			'text-black_hover': isActive,
-		},
-		className,
-	]
-} {...props}>
-	<slot />
+<a
+  href={href}
+  class:list={[
+    'text-black',
+    'font-bold',
+    'text-2xl',
+    'px-2',
+    'hover:text-black_hover',
+    'tracking-wide',
+    "font-['Open Sans', sans-serif']", // TODO: theme
+    {
+      'text-black_hover': isActive,
+    },
+    className,
+  ]}
+  {...props}
+>
+  <slot />
 </a>

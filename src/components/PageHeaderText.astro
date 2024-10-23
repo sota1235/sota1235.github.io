@@ -1,16 +1,16 @@
 ---
 type Props = {
-	className?: string
+  className?: string
 }
 
 const { className } = Astro.props
 ---
 
-<h1 class:list={
-	[
-		"text-black font-bold my-3 text-center my-[40px] md:my-[60px] text-3xl md:text-6xl",
-		className,
-	]
-}>
-	<slot />
+<h1
+  class:list={[
+    'my-3 my-[40px] text-center text-3xl font-bold text-black md:my-[60px] md:text-6xl',
+    className,
+  ]}
+>
+  <slot />
 </h1>
