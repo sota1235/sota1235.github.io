@@ -26,20 +26,29 @@
 
 <script>
     const button = document.querySelector('button');
+
+    function updateButtonText(text: string) {
+        if (button === null) {
+            return;
+        }
+
+        button.innerHTML = text;
+    }
+
     const toggleImage = () => {
         const icon_2d = document.getElementById('image_2d');
         const icon_3d = document.getElementById('image_3d');
-        const is2D = !icon_2d.classList.contains('hidden');
+        const is2D = !icon_2d?.classList.contains('hidden');
 
         if (is2D) {
-            icon_3d.classList.remove('hidden');
-            icon_2d.classList.add('hidden');
-            button.innerHTML = '3D';
+            icon_3d?.classList.remove('hidden');
+            icon_2d?.classList.add('hidden');
+            updateButtonText('3D');
         } else {
-            icon_2d.classList.remove('hidden');
-            icon_3d.classList.add('hidden');
-            button.innerHTML = '2D';
+            icon_2d?.classList.remove('hidden');
+            icon_3d?.classList.add('hidden');
+            updateButtonText('2D');
         }
     };
-    button.addEventListener('click', toggleImage);
+    button?.addEventListener('click', toggleImage);
 </script>
