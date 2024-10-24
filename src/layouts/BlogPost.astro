@@ -11,18 +11,20 @@ const { data, ...rest } = Astro.props
 
 <Layout title={data.title} description={data.title}>
   <div class="mx-auto max-w-3xl">
-    <div class="my-[10px] md:my-[60px]">
+    <div class="my-[30px] md:my-[60px]">
       <FormattedDate
         date={data.pubDate}
         className="text-2xl font-bold text-black"
       />
       <a href={`/blog/${rest.slug}`}>
-        <HeaderText className="text-2xl hover:text-black_hover md:text-3xl"
+        <HeaderText className="text-3xl hover:text-black_hover md:text-4xl"
           >{data.title}</HeaderText
         >
       </a>
     </div>
-    <article class="prose prose-base mb-[200px] max-w-none list-inside">
+    <article
+      class="prose prose-sm mb-[200px] max-w-none list-inside md:prose-base"
+    >
       <slot />
     </article>
   </div>

@@ -9,6 +9,26 @@ export default {
         black: '#154B5F',
         black_hover: '#0E789F',
       },
+      typography: {
+        sm: {
+          css: [
+            {
+              h1: {
+                fontSize: '1.6rem',
+              },
+            },
+          ],
+        },
+        base: {
+          css: [
+            {
+              h1: {
+                fontSize: '1.7rem',
+              },
+            },
+          ],
+        },
+      },
     },
   },
   plugins: [typography],
