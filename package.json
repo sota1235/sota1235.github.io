@@ -10,7 +10,8 @@
     "astro": "astro",
     "a11y-check": "pa11y-ci",
     "prepare": "husky",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",

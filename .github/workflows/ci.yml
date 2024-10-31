@@ -6,6 +6,18 @@ on:
   pull_request:
 
 jobs:
+  lint:
+    timeout-minutes: 10
+    permissions:
+      contents: read
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+      - uses: ./.github/actions/setup-node
+      - name: Linting
+        run: pnpm run format:check
+
   check-by-astro:
     timeout-minutes: 10
     permissions:
