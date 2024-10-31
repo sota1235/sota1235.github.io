@@ -9,7 +9,11 @@ type Props = CollectionEntry<'blog'>
 const { data, ...rest } = Astro.props
 ---
 
-<Layout title={data.title} description={data.title}>
+<Layout
+  title={data.title}
+  description={data.title}
+  image={`/blog/${rest.slug}/ogp.png`}
+>
   <div class="mx-auto max-w-3xl">
     <div class="my-[30px] md:my-[60px]">
       <FormattedDate
