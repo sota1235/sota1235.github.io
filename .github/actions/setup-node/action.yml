@@ -1,0 +1,13 @@
+name: Setup Node
+description: Setting up Node.js with pnpm
+runs:
+  using: 'composite'
+  steps:
+    - uses: pnpm/action-setup@v2
+    - uses: actions/setup-node@v4
+      with:
+        node-version-file: '.node-version'
+        cache: pnpm
+        cache-dependency-path: 'pnpm-lock.yaml'
+    - run: pnpm i
+      shell: bash
