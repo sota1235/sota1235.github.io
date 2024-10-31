@@ -44,3 +44,17 @@ jobs:
           pnpm run build
           pnpm run preview &
           pnpm run a11y-check
+
+  lhci:
+    timeout-minutes: 10
+    permissions:
+      contents: read
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+      - uses: ./.github/actions/setup-node
+      - name: Run lighthouse
+        run: |
+          pnpm run build
+          pnpm run lhci --upload.target=temporary-public-storage
