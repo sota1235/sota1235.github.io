@@ -2,28 +2,29 @@ import { ImageResponse } from '@vercel/og'
 import resolveConfig from 'tailwindcss/resolveConfig'
 import tailwindConfig from '../../tailwind.config.mjs'
 import { readFile } from 'node:fs/promises'
+import type { Config } from 'tailwindcss/types/config';
+import { fileURLToPath } from 'node:url'
+import { join } from 'node:path'
 
-const { theme } = resolveConfig(tailwindConfig)
+const { theme } = resolveConfig(tailwindConfig as Config)
 
-const notoSansRegularFont = () => {
-  const url = new URL(
-    '../../public/fonts/NotoSansJP-Regular.woff',
-    import.meta.url
-  )
-  return readFile(url)
-}
-
-const notoSansBoldFont = () => {
-  const url = new URL(
-    '../../public/fonts/NotoSansJP-ExtraBold.woff',
-    import.meta.url
-  )
-  return readFile(url)
+function readFileFromRelative(relativePath: string) {
+  console.log(import.meta.url)
+  // FIXME: during building process, import.meta.url will be the path of the file **which imports this file**
+  // so this will be easily broken...
+  // refs https://github.com/withastro/astro/issues/5438
+  return readFile(
+    import.meta.env.DEV ?
+    join(
+      fileURLToPath(import.meta.url),
+      relativePath
+    ) : new URL(`../${relativePath}`, import.meta.url)
+  );
 }
 
 export async function getOgpResponse({ title }: { title: string }) {
-  const notoSansRegularFontData = await notoSansRegularFont()
-  const notoSansBoldFontData = await notoSansBoldFont()
+  const notoSansRegularFontData = await readFileFromRelative('../../../src/assets/fonts/NotoSansJP-Regular.woff');
+  const notoSansBoldFontData = await readFileFromRelative('../../../src/assets/fonts/NotoSansJP-ExtraBold.woff');
 
   return new ImageResponse(
     (
@@ -55,7 +56,7 @@ export async function getOgpResponse({ title }: { title: string }) {
           style={{
             fontWeight: 300,
             fontSize: '2.5rem',
-            color: theme.colors.black_hover,
+            color: (theme.colors as any).black_hover, // TODO: fix type
           }}
         >
           sota1235.com
