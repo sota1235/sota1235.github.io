@@ -9,7 +9,6 @@ import { join } from 'node:path'
 const { theme } = resolveConfig(tailwindConfig as Config)
 
 function readFileFromRelative(relativePath: string) {
-  console.log(import.meta.url)
   // FIXME: during building process, import.meta.url will be the path of the file **which imports this file**
   // so this will be easily broken...
   // refs https://github.com/withastro/astro/issues/5438
