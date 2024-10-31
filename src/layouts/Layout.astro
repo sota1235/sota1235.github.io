@@ -1,5 +1,7 @@
 ---
 import Header from '../components/Header.astro'
+import { ViewTransitions } from 'astro:transitions'
+
 const canonicalURL = new URL(Astro.url.pathname, Astro.site)
 
 interface Props {
@@ -64,6 +66,7 @@ const { title, description, image = '/ogp.webp' } = Astro.props
     <meta property="twitter:title" content={title} />
     <meta property="twitter:description" content={description} />
     <meta property="twitter:image" content={new URL(image, Astro.url)} />
+    <ViewTransitions />
   </head>
 
   <body>
