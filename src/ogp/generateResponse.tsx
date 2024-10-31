@@ -2,7 +2,7 @@ import { ImageResponse } from '@vercel/og'
 import resolveConfig from 'tailwindcss/resolveConfig'
 import tailwindConfig from '../../tailwind.config.mjs'
 import { readFile } from 'node:fs/promises'
-import type { Config } from 'tailwindcss/types/config';
+import type { Config } from 'tailwindcss/types/config'
 import { fileURLToPath } from 'node:url'
 import { join } from 'node:path'
 
@@ -14,17 +14,19 @@ function readFileFromRelative(relativePath: string) {
   // so this will be easily broken...
   // refs https://github.com/withastro/astro/issues/5438
   return readFile(
-    import.meta.env.DEV ?
-    join(
-      fileURLToPath(import.meta.url),
-      relativePath
-    ) : new URL(`../${relativePath}`, import.meta.url)
-  );
+    import.meta.env.DEV
+      ? join(fileURLToPath(import.meta.url), relativePath)
+      : new URL(`../${relativePath}`, import.meta.url)
+  )
 }
 
 export async function getOgpResponse({ title }: { title: string }) {
-  const notoSansRegularFontData = await readFileFromRelative('../../../src/assets/fonts/NotoSansJP-Regular.woff');
-  const notoSansBoldFontData = await readFileFromRelative('../../../src/assets/fonts/NotoSansJP-ExtraBold.woff');
+  const notoSansRegularFontData = await readFileFromRelative(
+    '../../../src/assets/fonts/NotoSansJP-Regular.woff'
+  )
+  const notoSansBoldFontData = await readFileFromRelative(
+    '../../../src/assets/fonts/NotoSansJP-ExtraBold.woff'
+  )
 
   return new ImageResponse(
     (
