@@ -9,6 +9,8 @@ on:
       - renovate.json
       - .gitignore
       - CNAME
+      - .github/*
+      - '!.github/workflows/ci.yml'
 
 jobs:
   lint:
