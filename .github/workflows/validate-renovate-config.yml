@@ -1,0 +1,25 @@
+name: Check renovate config
+
+on:
+  push:
+    paths:
+      - renovate.json
+      - .node-version
+
+jobs:
+  validate-renovate-config:
+    timeout-minutes: 10
+    permissions:
+      contents: read
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setting up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: .node-version
+
+      - name: validating renovate config
+        run: npx --yes --package renovate -- renovate-config-validator --strict
