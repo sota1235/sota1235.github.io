@@ -1,23 +1,27 @@
 ---
 import Layout from '../layouts/Layout.astro'
 import PageHeaderText from '../components/PageHeaderText.astro'
-import Typography from '../components/Typography.astro'
+import { CollectionEntry, getCollection } from 'astro:content'
+
+const podcasts = await getCollection('podcasts')
+const sortedPodcasts = podcasts.sort((a, b) => {
+  return Date.parse(b.data.date) < Date.parse(a.data.date) ? -1 : 1
+})
+
+const mediaItems: CollectionEntry<'podcasts'>[] = [...sortedPodcasts]
 ---
 
 <Layout title="MEDIA" description="Media information of @sota1235">
   <PageHeaderText>MEDIA</PageHeaderText>
-  <div class="flex flex-col gap-10 md:flex-row">
-    <div class="flex flex-col gap-3">
-      <Typography className="mb-4"> Sota Sugiura (a.k.a @sota1235) </Typography>
-      <Typography className="text-xl">
-        Software Engineer (Web, Security and Frontend)
-      </Typography>
-      <Typography className="text-xl">
-        Working at <a
-          href="https://10x.co.jp/"
-          class="underline hover:text-black_hover">10X, inc.</a
-        >
-      </Typography>
-    </div>
+  <div class="mb-[200px] flex flex-row flex-wrap justify-center gap-10">
+    {
+      mediaItems.map((item) => (
+        <img
+          class="h-[120px] w-[120px] border-[1px] border-black md:h-[193px] md:w-[193px]"
+          src={item.data.ogpImageUrl}
+          alt={item.data.title}
+        />
+      ))
+    }
   </div>
 </Layout>
