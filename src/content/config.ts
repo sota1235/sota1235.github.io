@@ -12,4 +12,18 @@ const blog = defineCollection({
   }),
 })
 
-export const collections = { blog }
+const mediaSchema = z.object({
+  kind: z.enum(['podcast', 'article', 'slide']),
+  mediaTitle: z.string(),
+  title: z.string(),
+  date: z.string(),
+  link: z.string(),
+  ogpImageUrl: z.string(),
+})
+
+const podcasts = defineCollection({
+  type: 'data',
+  schema: mediaSchema,
+})
+
+export const collections = { blog, podcasts }
