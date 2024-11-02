@@ -12,6 +12,17 @@ const blog = defineCollection({
   }),
 })
 
+const companyBlog = defineCollection({
+  type: 'data',
+  schema: z.object({
+    title: z.string(),
+    company: z.enum(['mercari', '10X']),
+    link: z.string(),
+    pubDate: z.coerce.date(),
+    thumbnailImageUrl: z.string().optional(),
+  }),
+})
+
 const mediaSchema = z.object({
   kind: z.enum(['podcast', 'article', 'slide']),
   mediaTitle: z.string(),
@@ -22,6 +33,11 @@ const mediaSchema = z.object({
 })
 
 const podcasts = defineCollection({
+  type: 'data',
+  schema: mediaSchema,
+})
+
+const media = defineCollection({
   type: 'data',
   schema: mediaSchema,
 })
