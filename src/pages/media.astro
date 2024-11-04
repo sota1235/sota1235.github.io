@@ -1,25 +1,26 @@
 ---
 import Layout from '../layouts/Layout.astro'
 import PageHeaderText from '../components/PageHeaderText.astro'
-import { CollectionEntry, getCollection } from 'astro:content'
+import { getCollection } from 'astro:content'
+import SectionHeaderText from '../components/SectionHeaderText.astro'
+import MediaItem from '../components/MediaItem.astro'
 
-const podcasts = await getCollection('podcasts')
-const sortedPodcasts = podcasts.sort((a, b) => {
-  return Date.parse(b.data.date) < Date.parse(a.data.date) ? -1 : 1
-})
-
-const mediaItems: CollectionEntry<'podcasts'>[] = [...sortedPodcasts]
+const podcasts = (await getCollection('podcasts'))
+  .sort((a, b) => (Date.parse(b.data.date) < Date.parse(a.data.date) ? -1 : 1))
+  .slice(0, 10)
 ---
 
 <Layout title="MEDIA" description="Media information of @sota1235">
   <PageHeaderText>MEDIA</PageHeaderText>
-  <div class="mb-[200px] flex flex-row flex-wrap justify-center gap-10">
+  <SectionHeaderText>PODCASTS</SectionHeaderText>
+  <div class="mb-[200px] flex flex-row justify-start gap-10 overflow-y-scroll">
     {
-      mediaItems.map((item) => (
-        <img
-          class="h-[120px] w-[120px] border-[1px] border-black md:h-[193px] md:w-[193px]"
-          src={item.data.ogpImageUrl}
-          alt={item.data.title}
+      podcasts.map((item) => (
+        <MediaItem
+          title={item.data.title}
+          description={`${item.data.mediaTitle} / ${item.data.title}`}
+          imageUrl={item.data.ogpImageUrl}
+          link={item.data.link}
         />
       ))
     }
