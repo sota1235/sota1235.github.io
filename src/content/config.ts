@@ -38,9 +38,9 @@ const podcasts = defineCollection({
   schema: mediaSchema,
 })
 
-const media = defineCollection({
+const slides = defineCollection({
   type: 'data',
   schema: mediaSchema,
 })
 
-export const collections = { blog, podcasts }
+export const collections = { blog, podcasts, slides }

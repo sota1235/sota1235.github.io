@@ -8,14 +8,30 @@ import MediaItem from '../components/MediaItem.astro'
 const podcasts = (await getCollection('podcasts'))
   .sort((a, b) => (Date.parse(b.data.date) < Date.parse(a.data.date) ? -1 : 1))
   .slice(0, 10)
+const slides = (await getCollection('slides'))
+  .sort((a, b) => (Date.parse(b.data.date) < Date.parse(a.data.date) ? -1 : 1))
+  .slice(0, 10)
 ---
 
 <Layout title="MEDIA" description="Media information of @sota1235">
   <PageHeaderText>MEDIA</PageHeaderText>
   <SectionHeaderText>PODCASTS</SectionHeaderText>
-  <div class="mb-[200px] flex flex-row justify-start gap-10 overflow-y-scroll">
+  <div class="flex flex-row justify-start gap-10 overflow-y-scroll">
     {
       podcasts.map((item) => (
+        <MediaItem
+          title={item.data.title}
+          description={`${item.data.mediaTitle} / ${item.data.title}`}
+          imageUrl={item.data.ogpImageUrl}
+          link={item.data.link}
+        />
+      ))
+    }
+  </div>
+  <SectionHeaderText>SLIDES</SectionHeaderText>
+  <div class="mb-[200px] flex flex-row justify-start gap-10 overflow-y-scroll">
+    {
+      slides.map((item) => (
         <MediaItem
           title={item.data.title}
           description={`${item.data.mediaTitle} / ${item.data.title}`}
