@@ -37,6 +37,7 @@ const slides = (await getCollection('slides'))
           description={`${item.data.mediaTitle} / ${item.data.title}`}
           imageUrl={item.data.ogpImageUrl}
           link={item.data.link}
+          className="h-[120px] min-w-[155px] md:h-[160px] md:min-w-[213px]"
         />
       ))
     }
