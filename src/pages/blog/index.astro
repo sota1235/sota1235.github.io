@@ -3,12 +3,21 @@ import { getCollection } from 'astro:content'
 import FormattedDate from '../../components/FormattedDate.astro'
 import Layout from '../../layouts/Layout.astro'
 import PageHeaderText from '../../components/PageHeaderText.astro'
+import ExternalLinkIcon from '../../components/icons/ExternalLinkIcon.astro'
 
-const posts = (
-  await getCollection('blog', ({ data }) => {
-    return import.meta.env.PROD ? data.draft !== true : true
-  })
-).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+function asDate(date: string | Date) {
+  if (date instanceof Date) return date
+  return new Date(date)
+}
+
+const blogPosts = await getCollection('blog', ({ data }) => {
+  return import.meta.env.PROD ? data.draft !== true : true
+})
+const companyBlogPosts = await getCollection('companyBlog')
+const allPosts = [...blogPosts, ...companyBlogPosts]
+const posts = allPosts.sort((a, b) => {
+  return asDate(b.data.pubDate).valueOf() - asDate(a.data.pubDate).valueOf()
+})
 ---
 
 <Layout title="BLOG" description="Blog list page">
@@ -16,17 +25,43 @@ const posts = (
   <section class="my-[60px]">
     <ul class="border-t-2 border-[#154B5F]">
       {
-        posts.map((post) => (
-          <li class="border-b-2 border-[#154B5F] py-6">
-            <a
-              href={`/blog/${post.slug}/`}
-              class="flex flex-col gap-3 text-xl font-bold text-black md:flex-row md:gap-0 md:text-2xl"
-            >
-              <FormattedDate date={post.data.pubDate} className="w-[160px]" />
-              <span>{post.data.title}</span>
-            </a>
-          </li>
-        ))
+        posts.map((post) =>
+          post.collection === 'blog' ? (
+            <li class="border-b-2 border-[#154B5F] py-6">
+              <a
+                href={`/blog/${post.slug}/`}
+                class="flex flex-col text-xl font-bold text-black md:flex-row md:text-2xl"
+              >
+                <FormattedDate
+                  date={post.data.pubDate}
+                  className="w-[120px] mr-[30px]"
+                />
+                <span>{post.data.title}</span>
+              </a>
+            </li>
+          ) : (
+            <li class="border-b-2 border-[#154B5F] py-6">
+              <a
+                href={post.data.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="flex flex-col text-xl font-bold text-black md:flex-row md:text-2xl"
+              >
+                <FormattedDate
+                  date={new Date(post.data.pubDate)}
+                  className="w-[120px] mr-[30px]"
+                />
+                <p>
+                  {post.data.title}{' '}
+                  <span class="text-lg text-black_hover md:text-xl">
+                    (Post at {post.data.company})
+                  </span>
+                  <ExternalLinkIcon className="inline h-4 w-4 fill-black_hover" />
+                </p>
+              </a>
+            </li>
+          )
+        )
       }
     </ul>
   </section>
