@@ -13,6 +13,7 @@ const { link, imageUrl, title, description, className } = Astro.props
 <a
   href={link}
   target="_blank"
+  rel="noopener noreferrer"
   class:list={[
     'group relative mb-6 h-[120px] min-w-[120px] border-[1px] border-black md:h-[160px] md:min-w-[160px]',
     className,
