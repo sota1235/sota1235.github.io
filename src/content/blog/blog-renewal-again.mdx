@@ -2,22 +2,59 @@
 title: 'N年ぶりにブログを移行しました'
 description: ''
 pubDate: '2024/10/28'
-draft: true
 ---
 
 ## N年ぶりにブログを移行しました
 
 しました。見ての通りです。
 
-経緯としては自作ブログ([middleman](https://middlemanapp.com/jp/)で作った) → はてなブログ → 今という感じ。
+今までの軌跡は自作ブログ(100年前に[middleman](https://middlemanapp.com/jp/)で作った) → はてなブログ → 今という感じ。
 
 import Bookmark from '../../components/Bookmark.astro'
 
-<Bookmark url="http://sota1235.com/blog/2015-05-03-185928/" title="" />
+<Bookmark
+    url="http://sota1235.com/blog/2015-05-03-185928/"
+    description='print("Hello World") - ブログ移転します(予告)'
+    title='print("Hello World")'
+    image="http://sota1235.com/blog/2015-05-03-185928/ogp.png"
+/>
+
+## なぜ移行したのか
+
+本業でProduct Securityの業務をガッツリやる中で、相対的にコードを読み書きする量が減る中で久々にコード書きたいな〜みたいな気持ちがあった。
+
+元々はJavaScriptになりたいと思ってた身としてはweb frontend界隈追っかけ直すか〜という一環で[mozaic.fm](https://mozaic.fm/)を聞いて[Astro](https://astro.build/)を知り、なかなか良さそうじゃないという気持ちで使ってみたという感じ。
+
+なのでブログ移行が目的というよりAstroを使ってそこそこのものを作るのが目的だった。
+
+## せっかく移行したので
+
+100年前の自分とは違う(と信じてる)ので今回はちゃんと面倒見ようかなーと思ってポートフォリオ的な感じでコツコツ作り込もうかなと思ってる。
+
+存在としてはNotionで書いた職務経歴書的な何かと役割が被るんだけど、Astroで管理しやすいものとかは徐々にこっちに移しつつ棲み分けはおいおい考えようかなという気持ちです。
+
+<Bookmark
+    url="https://sota1235.notion.site/README-sota1235-8457ce326b8f4b86aa1739de42891cdb?pvs=74"
+    description="README - @sota1235 / 職務経歴書的な何かです"
+    title="README - @sota1235"
+    image="https://www.notion.so/images/meta/default.png"
+/>
+
+## コード
+
+GitHubに置いてます。細々TODOが残ってるんで色々キャッチアップしながら育てます。
+
+<Bookmark
+    url="https://github.com/sota1235/sota1235.github.io"
+    title="sota1235/sota1235.github.io"
+    description="Contribute to sota1235/sota1235.github.io development by creating an account on GitHub."
+    image="https://opengraph.githubassets.com/b609468c6ca30612562d5aa944b7149a4c9af0827d5935847971e70f5be32e02/sota1235/sota1235.github.io"
+/>
 
 ## 最後に
 
 以下のサイトや記事を参考にしました、先駆者の皆様に感謝です。
 
 - [hiroppy/site](https://github.com/hiroppy/site)
+  - hiroppyありがとう定期
 - [@vercel/og を使って Astro 製ブログのビルド時に OGP 画像を出力する](https://t28.dev/blog/output-ogp-image-for-astro-pages)

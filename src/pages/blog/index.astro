@@ -36,7 +36,7 @@ const posts = allPosts.sort((a, b) => {
                   date={post.data.pubDate}
                   className="w-[120px] mr-[30px]"
                 />
-                <span>{post.data.title}</span>
+                <span class="hover:text-black_hover">{post.data.title}</span>
               </a>
             </li>
           ) : (
@@ -51,7 +51,7 @@ const posts = allPosts.sort((a, b) => {
                   date={new Date(post.data.pubDate)}
                   className="w-[120px] mr-[30px]"
                 />
-                <div class="flex flex-col gap-1">
+                <div class="flex flex-col gap-1 hover:text-black_hover">
                   <p>{post.data.title}</p>
                   <p>
                     <span class="text-lg text-black_hover md:text-xl">
