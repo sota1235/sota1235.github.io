@@ -5,9 +5,10 @@ import sitemap from '@astrojs/sitemap'
 import tailwind from '@astrojs/tailwind'
 
 import react from '@astrojs/react'
+import fetchMediaData from './src/integrations/fetch-media-data'
 
 // https://astro.build/config
 export default defineConfig({
   site: 'https://sota1235.com',
-  integrations: [mdx(), sitemap(), tailwind(), react()],
+  integrations: [mdx(), sitemap(), tailwind(), react(), fetchMediaData()],
 })

@@ -21,7 +21,8 @@ const { data, ...rest } = Astro.props
         className="text-2xl font-bold text-black"
       />
       <a href={`/blog/${rest.slug}`}>
-        <HeaderText className="text-3xl hover:text-black_hover md:text-4xl"
+        <HeaderText
+          className="mt-5 text-3xl hover:text-black_hover md:mt-7 md:text-4xl"
           >{data.title}</HeaderText
         >
       </a>

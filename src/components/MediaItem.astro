@@ -1,0 +1,32 @@
+---
+type Props = {
+  title: string
+  description: string
+  imageUrl: string
+  link: string
+  className?: string
+}
+
+const { link, imageUrl, title, description, className } = Astro.props
+---
+
+<a
+  href={link}
+  target="_blank"
+  rel="noopener noreferrer"
+  class:list={[
+    'group relative mb-6 h-[120px] min-w-[120px] border-[1px] border-black md:h-[160px] md:min-w-[160px]',
+    className,
+  ]}
+>
+  <img class="h-[100%] w-[100%] object-contain" src={imageUrl} alt={title} />
+  <div
+    class="absolute bottom-0 h-[100%] w-[100%] opacity-0 group-hover:bg-black group-hover:opacity-80"
+  >
+  </div>
+  <div
+    class="absolute bottom-0 flex h-[100%] items-center justify-center px-2 py-4 text-center text-sm text-white opacity-0 group-hover:opacity-100 md:text-base"
+  >
+    {description}
+  </div>
+</a>
