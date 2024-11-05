@@ -51,13 +51,15 @@ const posts = allPosts.sort((a, b) => {
                   date={new Date(post.data.pubDate)}
                   className="w-[120px] mr-[30px]"
                 />
-                <p>
-                  {post.data.title}{' '}
-                  <span class="text-lg text-black_hover md:text-xl">
-                    (Post at {post.data.company})
-                  </span>
-                  <ExternalLinkIcon className="inline h-4 w-4 fill-black_hover" />
-                </p>
+                <div class="flex flex-col gap-1">
+                  <p>{post.data.title}</p>
+                  <p>
+                    <span class="text-lg text-black_hover md:text-xl">
+                      (Post at {post.data.company})
+                    </span>
+                    <ExternalLinkIcon className="inline h-3 w-3 fill-black_hover" />
+                  </p>
+                </div>
               </a>
             </li>
           )
