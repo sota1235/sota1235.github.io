@@ -1,0 +1,13 @@
+---
+import InformationIcon from './icons/InformationIcon.astro'
+const { url, title, description, image } = Astro.props
+---
+
+<div class="flex items-center gap-3 rounded-md bg-gray-200 px-5 py-2">
+  <div>
+    <InformationIcon className="inline h-6 w-6 fill-black_hover" />
+  </div>
+  <div>
+    <slot />
+  </div>
+</div>
