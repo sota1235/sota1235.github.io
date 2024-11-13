@@ -34,3 +34,46 @@ const { data, ...rest } = Astro.props
     </article>
   </div>
 </Layout>
+<style is:global>
+  .rlb-container {
+    @apply flex flex-col rounded-lg border-[1px] border-gray-200 p-4;
+  }
+
+  .rlb-content {
+    @apply flex flex-row;
+  }
+
+  .rlb-info {
+    @apply flex-1;
+  }
+
+  .rlb-title {
+    @apply mb-2 text-base font-bold text-gray-900 hover:text-black_hover hover:underline md:text-lg;
+  }
+
+  .rlb-title-link {
+  }
+
+  .rlb-description {
+    @apply my-2 text-xs text-gray-700 md:text-sm;
+  }
+
+  .rlb-image {
+    @apply mx-2 h-24 w-48 rounded border-[1px] border-gray-300 object-cover;
+  }
+
+  .rlb-footer {
+    @apply flex flex-row;
+  }
+
+  .rlb-footer-link {
+  }
+
+  .rlb-footer-link-text {
+    @apply text-xs text-gray-400 text-gray-900 hover:underline md:text-sm;
+  }
+
+  .rlb-favicon {
+    @apply inline;
+  }
+</style>
