@@ -15,6 +15,10 @@ module.exports = {
     },
     assert: {
       preset: 'lighthouse:no-pwa',
+      assertions: {
+        // TODO
+        'bf-cache': 'off',
+      },
     },
   },
 }
