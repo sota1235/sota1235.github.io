@@ -31,5 +31,19 @@ export default {
       },
     },
   },
-  plugins: [typography],
+  plugins: [
+    typography,
+    ({ addVariant }) => {
+      // workaround: https://github.com/tailwindlabs/tailwindcss-typography/issues/329
+      addVariant(
+        'prose-inline-code',
+        '&.prose :where(:not(pre)>code):not(:where([class~="not-prose"] *))'
+      )
+
+      addVariant(
+        'prose-code-link',
+        '&.prose :where(a:has(code)):not(:where([class~="not-prose"] *))'
+      )
+    },
+  ],
 }
