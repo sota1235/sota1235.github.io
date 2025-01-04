@@ -55,11 +55,11 @@ const { data, ...rest } = Astro.props
   }
 
   .rlb-description {
-    @apply my-2 text-xs text-gray-700 md:text-sm;
+    @apply my-2 line-clamp-3 text-xs text-gray-700 md:text-sm;
   }
 
   .rlb-image {
-    @apply mx-2 h-24 w-48 rounded border-[1px] border-gray-300 object-cover;
+    @apply mx-2 h-24 w-24 rounded border-[1px] border-gray-300 object-cover md:h-24 md:w-48;
   }
 
   .rlb-footer {
@@ -70,7 +70,7 @@ const { data, ...rest } = Astro.props
   }
 
   .rlb-footer-link-text {
-    @apply text-xs text-gray-400 text-gray-900 hover:underline md:text-sm;
+    @apply text-xs text-gray-400 hover:underline md:text-sm;
   }
 
   .rlb-favicon {
