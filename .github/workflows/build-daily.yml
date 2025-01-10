@@ -61,6 +61,7 @@ jobs:
           git checkout -b "$BRANCH_NAME"
           git add .
           git commit -m "modify: build site daily(by GitHub Actions)"
+          # TODO: post step to remove branch for duplication error
           git push origin "$BRANCH_NAME"
           gh pr create \
             -R "$REPO" \
