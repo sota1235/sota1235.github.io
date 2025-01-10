@@ -22,13 +22,13 @@ jobs:
         id: check-diff
         run: |
           pnpm run build
-          if git diff --quiet .; then
-            echo "No changes"
-            echo "has_diff=false" >> "$GITHUB_OUTPUT"
-          else
+          if [[ -n $(git status --porcelain) ]]; then
             echo "Changes detected"
             git diff .
             echo "has_diff=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "No changes"
+            echo "has_diff=false" >> "$GITHUB_OUTPUT"
           fi
 
   build:
