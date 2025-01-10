@@ -50,8 +50,9 @@ jobs:
         with:
           app-id: ${{ secrets.GH_APP_SOTA1235_PR_EDITOR_APP_ID }}
           private-key: ${{ secrets.GH_APP_SOTA1235_PR_EDITOR_PRIVATE_KEY }}
+          owner: ${{ github.repository_owner }}
           repositories: |
-            ${{ github.repository }}
+            sota1235.github.io
 
       - name: Build site
         env:
