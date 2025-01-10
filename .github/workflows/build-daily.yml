@@ -52,6 +52,11 @@ jobs:
           pnpm run build
           DATE="$(date +%Y%m%d)"
           BRANCH_NAME="feat-build-site-daily-$DATE"
+
+          # see: https://qiita.com/thaim/items/3d1a4d09ec4a7d8844ce#github-actionsbot
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "github-actions[bot]"
+
           git checkout -b "$BRANCH_NAME"
           git add .
           git commit -m "modify: build site daily(by GitHub Actions)"
