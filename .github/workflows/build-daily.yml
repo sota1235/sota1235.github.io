@@ -70,4 +70,4 @@ jobs:
             --base main \
             --head "$BRANCH_NAME"
           PR_NUMBER="$(gh pr list -R "$REPO" --base main --head "$BRANCH_NAME" --json number --jq '.[0].number')"
-          gh pr merge "$PR_NUMBER" --auto
+          gh pr merge "$PR_NUMBER" -R "$REPO" --auto --merge
