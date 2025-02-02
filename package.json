@@ -12,6 +12,7 @@
     "prepare": "husky",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
+    "update-checksum": "aqua update-checksum -prune",
     "lhci": "lhci autorun"
   },
   "dependencies": {
