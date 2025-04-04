@@ -25,7 +25,7 @@
     "@sota1235/remark-link-bookmark": "0.0.7",
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
-    "@vercel/og": "0.6.4",
+    "@vercel/og": "0.6.8",
     "astro": "^4.16.18",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
