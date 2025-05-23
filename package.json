@@ -39,7 +39,7 @@
     "@lhci/cli": "0.14.0",
     "@tailwindcss/typography": "^0.5.15",
     "husky": "^9.1.6",
-    "lint-staged": "^15.2.10",
+    "lint-staged": "^16.0.0",
     "pa11y-ci": "3.1.0",
     "prettier": "^3.3.3",
     "prettier-plugin-astro": "^0.14.1",
