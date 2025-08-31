@@ -10,10 +10,10 @@ importers:
     dependencies:
       '@astrojs/check':
         specifier: ^0.9.4
-        version: 0.9.4(prettier-plugin-astro@0.14.1)(prettier@3.6.2)(typescript@5.8.3)
+        version: 0.9.4(prettier-plugin-astro@0.14.1)(prettier@3.6.2)(typescript@5.9.2)
       '@astrojs/mdx':
         specifier: ^3.1.8
-        version: 3.1.9(astro@4.16.19(@types/node@24.1.0)(rollup@4.46.3)(typescript@5.8.3))
+        version: 3.1.9(astro@4.16.19(@types/node@24.1.0)(rollup@4.46.3)(typescript@5.9.2))
       '@astrojs/react':
         specifier: ^3.6.2
         version: 3.6.3(@types/node@24.1.0)(@types/react-dom@18.3.7(@types/react@18.3.23))(@types/react@18.3.23)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -25,7 +25,7 @@ importers:
         version: 3.4.2
       '@astrojs/tailwind':
         specifier: ^5.1.2
-        version: 5.1.5(astro@4.16.19(@types/node@24.1.0)(rollup@4.46.3)(typescript@5.8.3))(tailwindcss@3.4.17)
+        version: 5.1.5(astro@4.16.19(@types/node@24.1.0)(rollup@4.46.3)(typescript@5.9.2))(tailwindcss@3.4.17)
       '@sota1235/remark-link-bookmark':
         specifier: 0.0.7
         version: 0.0.7
@@ -40,7 +40,7 @@ importers:
         version: 0.6.8
       astro:
         specifier: ^4.16.18
-        version: 4.16.19(@types/node@24.1.0)(rollup@4.46.3)(typescript@5.8.3)
+        version: 4.16.19(@types/node@24.1.0)(rollup@4.46.3)(typescript@5.9.2)
       react:
         specifier: ^18.3.1
         version: 18.3.1
@@ -55,7 +55,7 @@ importers:
         version: 3.4.17
       typescript:
         specifier: ^5.6.3
-        version: 5.8.3
+        version: 5.9.2
     devDependencies:
       '@astrojs/partytown':
         specifier: 2.1.4
@@ -3716,8 +3716,8 @@ packages:
   typescript-auto-import-cache@0.3.3:
     resolution: {integrity: sha512-ojEC7+Ci1ij9eE6hp8Jl9VUNnsEKzztktP5gtYNRMrTmfXVwA1PITYYAkpxCvvupdSYa/Re51B6KMcv1CTZEUA==}
 
-  typescript@5.8.3:
-    resolution: {integrity: sha512-p1diW6TqL9L07nNxvRMM7hMMw4c5XOo/1ibL4aAIGmSAt9slTE1Xgw5KWuof2uTOvCg9BY7ZRi+GaF+7sfgPeQ==}
+  typescript@5.9.2:
+    resolution: {integrity: sha512-CWBzXQrc/qOkhidw1OzBTQuYRbfyxDXJMVJ1XNwUHGROVmuaeiEm3OslpZ1RV96d7SKKjZKrSJu3+t/xlw3R9A==}
     engines: {node: '>=14.17'}
     hasBin: true
 
@@ -4207,12 +4207,12 @@ snapshots:
       '@jridgewell/gen-mapping': 0.3.13
       '@jridgewell/trace-mapping': 0.3.30
 
-  '@astrojs/check@0.9.4(prettier-plugin-astro@0.14.1)(prettier@3.6.2)(typescript@5.8.3)':
+  '@astrojs/check@0.9.4(prettier-plugin-astro@0.14.1)(prettier@3.6.2)(typescript@5.9.2)':
     dependencies:
-      '@astrojs/language-server': 2.15.3(prettier-plugin-astro@0.14.1)(prettier@3.6.2)(typescript@5.8.3)
+      '@astrojs/language-server': 2.15.3(prettier-plugin-astro@0.14.1)(prettier@3.6.2)(typescript@5.9.2)
       chokidar: 4.0.1
       kleur: 4.1.5
-      typescript: 5.8.3
+      typescript: 5.9.2
       yargs: 17.7.2
     transitivePeerDependencies:
       - prettier
@@ -4224,12 +4224,12 @@ snapshots:
 
   '@astrojs/internal-helpers@0.4.1': {}
 
-  '@astrojs/language-server@2.15.3(prettier-plugin-astro@0.14.1)(prettier@3.6.2)(typescript@5.8.3)':
+  '@astrojs/language-server@2.15.3(prettier-plugin-astro@0.14.1)(prettier@3.6.2)(typescript@5.9.2)':
     dependencies:
       '@astrojs/compiler': 2.12.2
       '@astrojs/yaml2ts': 0.2.1
       '@jridgewell/sourcemap-codec': 1.5.0
-      '@volar/kit': 2.4.6(typescript@5.8.3)
+      '@volar/kit': 2.4.6(typescript@5.9.2)
       '@volar/language-core': 2.4.6
       '@volar/language-server': 2.4.6
       '@volar/language-service': 2.4.6
@@ -4273,12 +4273,12 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@astrojs/mdx@3.1.9(astro@4.16.19(@types/node@24.1.0)(rollup@4.46.3)(typescript@5.8.3))':
+  '@astrojs/mdx@3.1.9(astro@4.16.19(@types/node@24.1.0)(rollup@4.46.3)(typescript@5.9.2))':
     dependencies:
       '@astrojs/markdown-remark': 5.3.0
       '@mdx-js/mdx': 3.1.0(acorn@8.14.0)
       acorn: 8.14.0
-      astro: 4.16.19(@types/node@24.1.0)(rollup@4.46.3)(typescript@5.8.3)
+      astro: 4.16.19(@types/node@24.1.0)(rollup@4.46.3)(typescript@5.9.2)
       es-module-lexer: 1.5.4
       estree-util-visit: 2.0.0
       gray-matter: 4.0.3
@@ -4333,9 +4333,9 @@ snapshots:
       stream-replace-string: 2.0.0
       zod: 3.25.76
 
-  '@astrojs/tailwind@5.1.5(astro@4.16.19(@types/node@24.1.0)(rollup@4.46.3)(typescript@5.8.3))(tailwindcss@3.4.17)':
+  '@astrojs/tailwind@5.1.5(astro@4.16.19(@types/node@24.1.0)(rollup@4.46.3)(typescript@5.9.2))(tailwindcss@3.4.17)':
     dependencies:
-      astro: 4.16.19(@types/node@24.1.0)(rollup@4.46.3)(typescript@5.8.3)
+      astro: 4.16.19(@types/node@24.1.0)(rollup@4.46.3)(typescript@5.9.2)
       autoprefixer: 10.4.20(postcss@8.5.1)
       postcss: 8.5.1
       postcss-load-config: 4.0.2(postcss@8.5.1)
@@ -5043,7 +5043,7 @@ snapshots:
       dompurify: 3.1.7
       jsdom: 25.0.1
       open-graph-scraper: 6.8.2
-      typescript: 5.8.3
+      typescript: 5.9.2
       unified: 11.0.5
       unist-util-visit: 5.0.0
     transitivePeerDependencies:
@@ -5166,12 +5166,12 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@volar/kit@2.4.6(typescript@5.8.3)':
+  '@volar/kit@2.4.6(typescript@5.9.2)':
     dependencies:
       '@volar/language-service': 2.4.6
       '@volar/typescript': 2.4.6
       typesafe-path: 0.2.2
-      typescript: 5.8.3
+      typescript: 5.9.2
       vscode-languageserver-textdocument: 1.0.12
       vscode-uri: 3.0.8
 
@@ -5311,7 +5311,7 @@ snapshots:
 
   astring@1.9.0: {}
 
-  astro@4.16.19(@types/node@24.1.0)(rollup@4.46.3)(typescript@5.8.3):
+  astro@4.16.19(@types/node@24.1.0)(rollup@4.46.3)(typescript@5.9.2):
     dependencies:
       '@astrojs/compiler': 2.12.2
       '@astrojs/internal-helpers': 0.4.1
@@ -5364,7 +5364,7 @@ snapshots:
       semver: 7.7.2
       shiki: 1.29.2
       tinyexec: 0.3.2
-      tsconfck: 3.1.6(typescript@5.8.3)
+      tsconfck: 3.1.6(typescript@5.9.2)
       unist-util-visit: 5.0.0
       vfile: 6.0.3
       vite: 5.4.19(@types/node@24.1.0)
@@ -5374,7 +5374,7 @@ snapshots:
       yargs-parser: 21.1.1
       zod: 3.25.76
       zod-to-json-schema: 3.24.6(zod@3.25.76)
-      zod-to-ts: 1.2.0(typescript@5.8.3)(zod@3.25.76)
+      zod-to-ts: 1.2.0(typescript@5.9.2)(zod@3.25.76)
     optionalDependencies:
       sharp: 0.33.5
     transitivePeerDependencies:
@@ -8630,9 +8630,9 @@ snapshots:
 
   ts-interface-checker@0.1.13: {}
 
-  tsconfck@3.1.6(typescript@5.8.3):
+  tsconfck@3.1.6(typescript@5.9.2):
     optionalDependencies:
-      typescript: 5.8.3
+      typescript: 5.9.2
 
   tslib@1.14.1: {}
 
@@ -8657,7 +8657,7 @@ snapshots:
     dependencies:
       semver: 7.7.2
 
-  typescript@5.8.3: {}
+  typescript@5.9.2: {}
 
   ultrahtml@1.5.3: {}
 
@@ -9084,9 +9084,9 @@ snapshots:
     dependencies:
       zod: 3.25.76
 
-  zod-to-ts@1.2.0(typescript@5.8.3)(zod@3.25.76):
+  zod-to-ts@1.2.0(typescript@5.9.2)(zod@3.25.76):
     dependencies:
-      typescript: 5.8.3
+      typescript: 5.9.2
       zod: 3.25.76
 
   zod@3.23.8: {}
