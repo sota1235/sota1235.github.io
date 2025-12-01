@@ -30,7 +30,7 @@ https://piyolog.hatenadiary.jp/entry/2025/03/27/022634
 
 なんでこんな名前なのかというと、騙し方に関連があります。百聞は一見にしかずで下記のような偽ページで騙します(画像はpiyologさんの記事より引用)。
 
-![ClickFixの例。piyologより引用](public/images/blog/replayfm-adventar-2025-day2/clickfix_example.png)
+![ClickFixの例。piyologより引用](/images/blog/replayfm-adventar-2025-day2/clickfix_example.png)
 
 この画像だけだと分かりづらいですが、前段として偽のCATCHAが仕込まれており、それを突破しようとするとこのようなダイアログが出ます。
 
