@@ -1,5 +1,5 @@
 ---
-title: '記事紹介 / An important update (and apology) on our PoisonSeed blog
+title: '記事紹介 / An important update (and apology) on our PoisonSeed blog'
 description: 'Replay.fm #46で紹介した記事の紹介です'
 tag: [replayfm]
 pubDate: '2025/12/04'
