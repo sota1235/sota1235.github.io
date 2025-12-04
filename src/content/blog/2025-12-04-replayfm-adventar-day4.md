@@ -18,7 +18,7 @@ pubDate: '2025/12/04'
 
 結論から言うと、かなり変わり種の記事紹介です。サマリーとしては
 
-- PoisonSeed blogにて、`[Cross-Device Sign-In](https://www.passkeycentral.org/design-guidelines/optional-patterns/cross-device-sign-in)で使われるQRコードを悪用することでpasskey認証に対するフィッシング攻撃が可能`と言うブログが出る
+- PoisonSeed blogにて、[Cross-Device Sign-In](https://www.passkeycentral.org/design-guidelines/optional-patterns/cross-device-sign-in)で使われるQRコードを悪用することでpasskey認証に対するフィッシング攻撃が可能と言うブログが出る
   - 該当ブログは削除済みの模様
 - 7月ごろの収録でsotaが引っ張ってきて紹介
   - いや、攻撃できるのおかしくね？となるもpasskeyの仕様知り尽くせてるわけじゃないしわからぬ。。。となる
