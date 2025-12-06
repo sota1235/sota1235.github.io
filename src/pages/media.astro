@@ -11,6 +11,9 @@ const podcasts = (await getCollection('podcasts'))
 const slides = (await getCollection('slides'))
   .sort((a, b) => (Date.parse(b.data.date) < Date.parse(a.data.date) ? -1 : 1))
   .slice(0, 10)
+const other = (await getCollection('other'))
+  .sort((a, b) => (Date.parse(b.data.date) < Date.parse(a.data.date) ? -1 : 1))
+  .slice(0, 10)
 ---
 
 <Layout title="MEDIA" description="Media information of @sota1235">
@@ -29,9 +32,23 @@ const slides = (await getCollection('slides'))
     }
   </div>
   <SectionHeaderText>SLIDES</SectionHeaderText>
-  <div class="mb-[200px] flex flex-row justify-start gap-10 overflow-y-scroll">
+  <div class="flex flex-row justify-start gap-10 overflow-y-scroll">
     {
       slides.map((item) => (
+        <MediaItem
+          title={item.data.title}
+          description={`${item.data.mediaTitle} / ${item.data.title}`}
+          imageUrl={item.data.ogpImageUrl}
+          link={item.data.link}
+          className="h-[120px] min-w-[155px] md:h-[160px] md:min-w-[213px]"
+        />
+      ))
+    }
+  </div>
+  <SectionHeaderText>OTHER</SectionHeaderText>
+  <div class="mb-[200px] flex flex-row justify-start gap-10 overflow-y-scroll">
+    {
+      other.map((item) => (
         <MediaItem
           title={item.data.title}
           description={`${item.data.mediaTitle} / ${item.data.title}`}
