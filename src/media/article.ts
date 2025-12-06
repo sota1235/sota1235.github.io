@@ -1,5 +1,5 @@
 export type MediaItem = {
-  kind: 'podcast' | 'article' | 'slide'
+  kind: 'podcast' | 'article' | 'slide' | 'other'
   mediaTitle: string
   title: string
   date: string
