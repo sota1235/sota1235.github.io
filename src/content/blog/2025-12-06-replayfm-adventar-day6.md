@@ -1,5 +1,5 @@
 ---
-title: '記事紹介 / EDRはどうやって不審な挙動を発見するのか？
+title: '記事紹介 / EDRはどうやって不審な挙動を発見するのか？'
 description: 'Replay.fm #22で紹介した記事の紹介です'
 tag: [replayfm]
 pubDate: '2025/12/06'
