@@ -52,12 +52,11 @@ jobs:
         with:
           persist-credentials: false
       - uses: ./.github/actions/setup-node
-      - name: Install Chrome for Puppeteer
-        run: npx puppeteer@24.32.0 browsers install chrome
+      - name: Install Playwright Browsers
+        run: pnpm exec playwright install --with-deps chromium
       - name: Check a11y
         run: |
           pnpm run build
-          pnpm run preview &
           pnpm run a11y-check
 
   lhci:

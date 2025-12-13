@@ -1,10 +1,6 @@
 const { readFileSync } = require('node:fs')
 
-const pa11y = JSON.parse(readFileSync('./.pa11yci').toString())
-
-const paths = pa11y.urls.map((path) =>
-  path.replace('http://localhost:4321', '')
-)
+const paths = ['/', '/biography', '/blog']
 
 module.exports = {
   ci: {
@@ -18,6 +14,8 @@ module.exports = {
       assertions: {
         // TODO
         'bf-cache': 'off',
+        // for @astrojs/partytown
+        deprecations: 'off',
       },
     },
   },

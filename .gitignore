@@ -25,3 +25,10 @@ pnpm-debug.log*
 
 # lhci
 .lighthouseci/
+
+# playwright
+playwright-report/
+test-results/
+
+# claude code
+.claude/settings.local.json
