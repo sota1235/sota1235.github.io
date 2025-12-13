@@ -1,7 +1,0 @@
-{
-    "urls": [
-        "http://localhost:4321/",
-        "http://localhost:4321/biography",
-        "http://localhost:4321/blog"
-    ]
-}
