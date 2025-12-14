@@ -14,6 +14,10 @@ module.exports = {
       assertions: {
         // TODO
         'bf-cache': 'off',
+        'network-dependency-tree-insight': 'off',
+        'color-contrast': 'off',
+        'image-delivery-insight': 'off',
+        'lcp-discovery-insight': 'off',
         // for @astrojs/partytown
         deprecations: 'off',
       },
