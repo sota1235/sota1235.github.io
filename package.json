@@ -19,7 +19,7 @@
     "@astrojs/check": "0.9.6",
     "@astrojs/mdx": "^4.3.12",
     "@astrojs/react": "^4.4.2",
-    "@astrojs/rss": "4.0.14",
+    "@astrojs/rss": "4.0.15",
     "@astrojs/sitemap": "^3.6.0",
     "@astrojs/tailwind": "^6.0.2",
     "@sota1235/remark-link-bookmark": "0.0.7",
