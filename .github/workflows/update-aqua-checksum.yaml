@@ -1,0 +1,35 @@
+name: update-aqua-checksum
+on:
+  pull_request:
+    paths:
+      - aqua.yaml
+      - aqua-checksums.json
+      - .github/workflows/update-aqua-checksum.yaml
+
+jobs:
+  get-token:
+    runs-on: ubuntu-slim
+    permissions:
+      id-token: write
+      contents: read
+    timeout-minutes: 10
+    outputs:
+      token: ${{ steps.octo-sts.outputs.token }}
+    steps:
+      - uses: octo-sts/action@f603d3be9d8dd9871a265776e625a27b00effe05 # v1.1.1
+        id: octo-sts
+        with:
+          scope: ${{ github.repository }}
+          identity: create_pull_request
+
+  update-aqua-checksums:
+    uses: aquaproj/update-checksum-workflow/.github/workflows/update-checksum.yaml@d248abb88efce715d50eb324100d9b29a20f7d18 # v1.0.4
+    needs:
+      - get-token
+    permissions:
+      contents: read
+    with:
+      aqua_version: v2.56.5
+      prune: true
+    secrets:
+      gh_token: ${{ needs.get-token.outputs.token }}

@@ -53,6 +53,8 @@ jobs:
           owner: ${{ github.repository_owner }}
           repositories: |
             sota1235.github.io
+          permission-contents: write
+          permission-pull-requests: write
 
       - name: Build site
         env:
