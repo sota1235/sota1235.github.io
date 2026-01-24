@@ -28,42 +28,40 @@ export async function getOgpResponse({ title }: { title: string }) {
   )
 
   return new ImageResponse(
-    (
-      <div
-        lang="ja-JP"
+    <div
+      lang="ja-JP"
+      style={{
+        fontFamily: 'Noto Sans JP',
+        background: 'white',
+        width: '100%',
+        height: '100%',
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '10px 10px',
+        textAlign: 'center',
+        alignItems: 'center',
+        justifyContent: 'center',
+      }}
+    >
+      <p
         style={{
-          fontFamily: 'Noto Sans JP',
-          background: 'white',
-          width: '100%',
-          height: '100%',
-          display: 'flex',
-          flexDirection: 'column',
-          gap: '10px 10px',
-          textAlign: 'center',
-          alignItems: 'center',
-          justifyContent: 'center',
+          fontWeight: 700,
+          color: theme.colors.black,
+          fontSize: '3rem',
         }}
       >
-        <p
-          style={{
-            fontWeight: 700,
-            color: theme.colors.black,
-            fontSize: '3rem',
-          }}
-        >
-          {title}
-        </p>
-        <p
-          style={{
-            fontWeight: 300,
-            fontSize: '2.5rem',
-            color: (theme.colors as any).black_hover, // TODO: fix type
-          }}
-        >
-          sota1235.com
-        </p>
-      </div>
-    ),
+        {title}
+      </p>
+      <p
+        style={{
+          fontWeight: 300,
+          fontSize: '2.5rem',
+          color: (theme.colors as any).black_hover, // TODO: fix type
+        }}
+      >
+        sota1235.com
+      </p>
+    </div>,
     {
       width: 1200,
       height: 630,
