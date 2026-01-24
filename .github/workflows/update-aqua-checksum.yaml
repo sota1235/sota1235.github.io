@@ -9,6 +9,9 @@ on:
 jobs:
   get-token:
     runs-on: ubuntu-slim
+    permissions:
+      id-token: write
+      contents: read
     outputs:
       token: ${{ steps.octo-sts.outputs.token }}
     steps:
@@ -24,7 +27,6 @@ jobs:
       - get-token
     permissions:
       contents: read
-      id-token: write
     with:
       aqua_version: v2.56.5
       prune: true
