@@ -18,7 +18,7 @@ jobs:
       - uses: octo-sts/action@main
         id: octo-sts
         with:
-          scope: ${{ github.repo }}
+          scope: ${{ github.repository }}
           identity: create_pull_request
 
   update-aqua-checksums:
