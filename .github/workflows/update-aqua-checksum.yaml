@@ -6,16 +6,43 @@ on:
       - aqua-checksums.json
       - .github/workflows/update-aqua-checksum.yaml
 
-permissions:
-  contents: write
+env:
+  AQUA_LOG_COLOR: always
 
 jobs:
   update-aqua-checksums:
-    uses: aquaproj/update-checksum-workflow/.github/workflows/update-checksum.yaml@d248abb88efce715d50eb324100d9b29a20f7d18 # v1.0.4
+    runs-on: ubuntu-latest
     permissions:
-      contents: write
-    with:
-      aqua_version: v2.56.6
-      prune: true
-    secrets:
-      gh_token: ${{ github.token }}
+      id-token: write
+      contents: read
+    timeout-minutes: 30
+    steps:
+      - name: Generate token (octo-sts)
+        if: ${{ ! github.event.pull_request.head.repo.fork }}
+        id: octo-sts
+        uses: octo-sts/action@f603d3be9d8dd9871a265776e625a27b00effe05 # v1.1.1
+        with:
+          scope: ${{ github.repository }}
+          identity: create_pull_request
+
+      - name: Checkout
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          persist-credentials: false
+
+      - name: Install aqua
+        uses: aquaproj/aqua-installer@5e54e5cee8a95ee2ce7c04cb993da6dfad13e59c
+        with:
+          aqua_version: v2.56.6
+        env:
+          AQUA_GITHUB_TOKEN: ${{ steps.octo-sts.outputs.token || github.token }}
+
+      - name: Update checksum
+        uses: aquaproj/update-checksum-action@4963338fe99be2c6fc0ecd972c3b683239e7d85a
+        with:
+          prune: true
+          skip_push: ${{ github.event.pull_request.head.repo.fork }}
+        env:
+          GITHUB_TOKEN: ${{ steps.octo-sts.outputs.token }}
+          AQUA_GITHUB_TOKEN: ${{ steps.octo-sts.outputs.token || github.token }}
