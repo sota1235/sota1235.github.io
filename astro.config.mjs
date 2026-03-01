@@ -2,7 +2,7 @@
 import { defineConfig } from 'astro/config'
 import mdx from '@astrojs/mdx'
 import sitemap from '@astrojs/sitemap'
-import tailwind from '@astrojs/tailwind'
+import tailwindcss from '@tailwindcss/vite'
 import react from '@astrojs/react'
 import fetchMediaData from './src/integrations/fetch-media-data'
 import partytown from '@astrojs/partytown'
@@ -26,7 +26,6 @@ export default defineConfig({
   integrations: [
     mdx(),
     sitemap(),
-    tailwind(),
     react(),
     fetchMediaData(),
     partytown({
@@ -35,4 +34,7 @@ export default defineConfig({
       },
     }),
   ],
+  vite: {
+    plugins: [tailwindcss()],
+  },
 })
