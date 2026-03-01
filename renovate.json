@@ -3,5 +3,12 @@
   "extends": [
     "github>sota1235/renovate-config",
     "github>aquaproj/aqua-renovate-config#2.10.0"
+  ],
+  "packageRules": [
+    {
+      "matchPackageNames": ["@types/react"],
+      "matchUpdateTypes": ["minor", "patch"],
+      "automerge": true
+    }
   ]
 }
