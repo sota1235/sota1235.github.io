@@ -1,12 +1,8 @@
 import { ImageResponse } from '@vercel/og'
-import resolveConfig from 'tailwindcss/resolveConfig'
-import tailwindConfig from '../../tailwind.config.mjs'
 import { readFile } from 'node:fs/promises'
-import type { Config } from 'tailwindcss/types/config'
 import { fileURLToPath } from 'node:url'
 import { join } from 'node:path'
-
-const { theme } = resolveConfig(tailwindConfig as Config)
+import { colors } from '../consts/colors'
 
 function readFileFromRelative(relativePath: string) {
   // FIXME: during building process, import.meta.url will be the path of the file **which imports this file**
@@ -46,7 +42,7 @@ export async function getOgpResponse({ title }: { title: string }) {
       <p
         style={{
           fontWeight: 700,
-          color: theme.colors.black,
+          color: colors.black,
           fontSize: '3rem',
         }}
       >
@@ -56,7 +52,7 @@ export async function getOgpResponse({ title }: { title: string }) {
         style={{
           fontWeight: 300,
           fontSize: '2.5rem',
-          color: (theme.colors as any).black_hover, // TODO: fix type
+          color: colors.black_hover,
         }}
       >
         sota1235.com
