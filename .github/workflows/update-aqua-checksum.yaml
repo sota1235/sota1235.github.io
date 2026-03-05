@@ -39,7 +39,7 @@ jobs:
           AQUA_GITHUB_TOKEN: ${{ steps.octo-sts.outputs.token || github.token }}
 
       - name: Update checksum
-        uses: aquaproj/update-checksum-action@4963338fe99be2c6fc0ecd972c3b683239e7d85a
+        uses: aquaproj/update-checksum-action@be26aee9a3bcc4fbb6b8ce9fa0bb4f29c13952cb
         with:
           prune: true
           skip_push: ${{ github.event.pull_request.head.repo.fork }}
