@@ -32,7 +32,7 @@ jobs:
           persist-credentials: false
 
       - name: Install aqua
-        uses: aquaproj/aqua-installer@5e54e5cee8a95ee2ce7c04cb993da6dfad13e59c
+        uses: aquaproj/aqua-installer@53fedd745b60969269923b63a69f47f5cc6502a8
         with:
           aqua_version: v2.56.7
         env:
