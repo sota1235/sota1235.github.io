@@ -12,8 +12,8 @@ function collectExistingCompanyBlogLinks(dirPath: string): Set<string> {
     try {
       const content = JSON.parse(readFileSync(`${dirPath}/${file}`, 'utf-8'))
       if (content.link) links.add(content.link)
-    } catch {
-      // skip invalid files
+    } catch (e) {
+      console.warn(`Failed to parse company blog JSON: ${file}`, e)
     }
   }
   return links

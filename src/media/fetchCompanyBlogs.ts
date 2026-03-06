@@ -24,7 +24,8 @@ export async function isAuthoredBySota1235(
     if (!res.ok) return false
     const html = await res.text()
     return html.includes('blog.hatena.ne.jp/sota1235/')
-  } catch {
+  } catch (e) {
+    console.warn(`Failed to fetch article page: ${articleUrl}`, e)
     return false
   }
 }
