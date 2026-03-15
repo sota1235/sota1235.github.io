@@ -1,12 +1,11 @@
 import { defineCollection, z } from 'astro:content'
+import { glob } from 'astro/loaders'
 
 const blog = defineCollection({
-  type: 'content',
-  // Type-check frontmatter using a schema
+  loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/blog' }),
   schema: z.object({
     title: z.string(),
     description: z.string(),
-    // Transform string to Date object
     pubDate: z.coerce.date(),
     updatedDate: z.coerce.date().optional(),
     draft: z.boolean().default(false),
@@ -14,7 +13,7 @@ const blog = defineCollection({
 })
 
 const companyBlog = defineCollection({
-  type: 'data',
+  loader: glob({ pattern: '**/*.json', base: './src/content/companyBlog' }),
   schema: z.object({
     title: z.string(),
     company: z.enum(['mercari', '10X']),
@@ -34,17 +33,17 @@ const mediaSchema = z.object({
 })
 
 const podcasts = defineCollection({
-  type: 'data',
+  loader: glob({ pattern: '**/*.json', base: './src/content/podcasts' }),
   schema: mediaSchema,
 })
 
 const slides = defineCollection({
-  type: 'data',
+  loader: glob({ pattern: '**/*.json', base: './src/content/slides' }),
   schema: mediaSchema,
 })
 
 const other = defineCollection({
-  type: 'data',
+  loader: glob({ pattern: '**/*.json', base: './src/content/other' }),
   schema: mediaSchema,
 })
 

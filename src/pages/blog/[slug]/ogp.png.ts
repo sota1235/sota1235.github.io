@@ -4,7 +4,7 @@ import { getOgpResponse } from '../../../ogp/generateResponse.tsx'
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const posts = await getCollection('blog')
-  return posts.map((post) => ({ params: { slug: post.slug } }))
+  return posts.map((post) => ({ params: { slug: post.id } }))
 }
 
 export const GET: APIRoute = async ({ params }) => {
