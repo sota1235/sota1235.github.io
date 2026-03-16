@@ -12,7 +12,7 @@ const { data, ...rest } = Astro.props
 <Layout
   title={data.title}
   description={data.title}
-  image={`/blog/${rest.slug}/ogp.png`}
+  image={`/blog/${rest.id}/ogp.png`}
 >
   <div class="mx-auto max-w-3xl">
     <div class="my-[30px] md:my-[60px]">
@@ -20,7 +20,7 @@ const { data, ...rest } = Astro.props
         date={data.pubDate}
         className="text-2xl font-bold text-black"
       />
-      <a href={`/blog/${rest.slug}`}>
+      <a href={`/blog/${rest.id}`}>
         <HeaderText
           className="mt-5 text-3xl hover:text-black_hover md:mt-7 md:text-4xl"
           >{data.title}</HeaderText
