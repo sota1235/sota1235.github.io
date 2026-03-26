@@ -1,26 +1,15 @@
 import { ImageResponse } from '@vercel/og'
 import { readFile } from 'node:fs/promises'
-import { fileURLToPath } from 'node:url'
 import { join } from 'node:path'
 import { colors } from '../consts/colors'
 
-function readFileFromRelative(relativePath: string) {
-  // FIXME: during building process, import.meta.url will be the path of the file **which imports this file**
-  // so this will be easily broken...
-  // refs https://github.com/withastro/astro/issues/5438
-  return readFile(
-    import.meta.env.DEV
-      ? join(fileURLToPath(import.meta.url), relativePath)
-      : new URL(`../${relativePath}`, import.meta.url)
-  )
-}
-
 export async function getOgpResponse({ title }: { title: string }) {
-  const notoSansRegularFontData = await readFileFromRelative(
-    '../../../src/assets/fonts/NotoSansJP-Regular.woff'
+  const fontsDir = join(process.cwd(), 'src/assets/fonts')
+  const notoSansRegularFontData = await readFile(
+    join(fontsDir, 'NotoSansJP-Regular.woff')
   )
-  const notoSansBoldFontData = await readFileFromRelative(
-    '../../../src/assets/fonts/NotoSansJP-ExtraBold.woff'
+  const notoSansBoldFontData = await readFile(
+    join(fontsDir, 'NotoSansJP-ExtraBold.woff')
   )
 
   return new ImageResponse(
