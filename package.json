@@ -19,7 +19,7 @@
     "@astrojs/check": "0.9.8",
     "@astrojs/mdx": "^5.0.0",
     "@astrojs/react": "^5.0.0",
-    "@astrojs/rss": "4.0.17",
+    "@astrojs/rss": "4.0.18",
     "@astrojs/sitemap": "^3.7.0",
     "@sota1235/remark-link-bookmark": "0.0.8",
     "@tailwindcss/vite": "4.2.2",
@@ -51,7 +51,7 @@
     }
   },
   "devDependencies": {
-    "@astrojs/partytown": "2.1.5",
+    "@astrojs/partytown": "2.1.6",
     "@axe-core/playwright": "4.11.1",
     "@lhci/cli": "0.15.1",
     "@playwright/test": "1.58.2",
