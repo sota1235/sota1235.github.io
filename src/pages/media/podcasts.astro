@@ -1,0 +1,26 @@
+---
+import Layout from '../../layouts/Layout.astro'
+import PageHeaderText from '../../components/PageHeaderText.astro'
+import { getCollection } from 'astro:content'
+import MediaItem from '../../components/MediaItem.astro'
+
+const podcasts = (await getCollection('podcasts')).sort((a, b) =>
+  Date.parse(b.data.date) < Date.parse(a.data.date) ? -1 : 1
+)
+---
+
+<Layout title="PODCASTS" description="All podcast episodes of @sota1235">
+  <PageHeaderText>PODCASTS</PageHeaderText>
+  <div class="mb-[200px] flex flex-row flex-wrap justify-start gap-10">
+    {
+      podcasts.map((item) => (
+        <MediaItem
+          title={item.data.title}
+          description={`${item.data.mediaTitle} / ${item.data.title}`}
+          imageUrl={item.data.ogpImageUrl}
+          link={item.data.link}
+        />
+      ))
+    }
+  </div>
+</Layout>

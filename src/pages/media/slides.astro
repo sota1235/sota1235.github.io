@@ -1,0 +1,27 @@
+---
+import Layout from '../../layouts/Layout.astro'
+import PageHeaderText from '../../components/PageHeaderText.astro'
+import { getCollection } from 'astro:content'
+import MediaItem from '../../components/MediaItem.astro'
+
+const slides = (await getCollection('slides')).sort((a, b) =>
+  Date.parse(b.data.date) < Date.parse(a.data.date) ? -1 : 1
+)
+---
+
+<Layout title="SLIDES" description="All slides of @sota1235">
+  <PageHeaderText>SLIDES</PageHeaderText>
+  <div class="mb-[200px] flex flex-row flex-wrap justify-start gap-10">
+    {
+      slides.map((item) => (
+        <MediaItem
+          title={item.data.title}
+          description={`${item.data.mediaTitle} / ${item.data.title}`}
+          imageUrl={item.data.ogpImageUrl}
+          link={item.data.link}
+          className="h-[120px] min-w-[155px] md:h-[160px] md:min-w-[213px]"
+        />
+      ))
+    }
+  </div>
+</Layout>

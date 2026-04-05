@@ -31,6 +31,14 @@ const other = (await getCollection('other'))
       ))
     }
   </div>
+  <div class="mt-2 text-right">
+    <a
+      href="/media/podcasts"
+      class="text-lg font-bold text-black hover:text-black_hover md:text-xl"
+    >
+      View All &rarr;
+    </a>
+  </div>
   <SectionHeaderText>SLIDES</SectionHeaderText>
   <div class="flex flex-row justify-start gap-10 overflow-y-scroll">
     {
@@ -45,8 +53,16 @@ const other = (await getCollection('other'))
       ))
     }
   </div>
+  <div class="mt-2 text-right">
+    <a
+      href="/media/slides"
+      class="text-lg font-bold text-black hover:text-black_hover md:text-xl"
+    >
+      View All &rarr;
+    </a>
+  </div>
   <SectionHeaderText>OTHER</SectionHeaderText>
-  <div class="mb-[200px] flex flex-row justify-start gap-10 overflow-y-scroll">
+  <div class="flex flex-row justify-start gap-10 overflow-y-scroll">
     {
       other.map((item) => (
         <MediaItem
@@ -58,5 +74,13 @@ const other = (await getCollection('other'))
         />
       ))
     }
+  </div>
+  <div class="mt-2 mb-[200px] text-right">
+    <a
+      href="/media/other"
+      class="text-lg font-bold text-black hover:text-black_hover md:text-xl"
+    >
+      View All &rarr;
+    </a>
   </div>
 </Layout>
