@@ -4,8 +4,8 @@ import PageHeaderText from '../../components/PageHeaderText.astro'
 import { getCollection } from 'astro:content'
 import MediaItem from '../../components/MediaItem.astro'
 
-const slides = (await getCollection('slides')).sort((a, b) =>
-  Date.parse(b.data.date) < Date.parse(a.data.date) ? -1 : 1
+const slides = (await getCollection('slides')).sort(
+  (a, b) => Date.parse(b.data.date) - Date.parse(a.data.date)
 )
 ---
 

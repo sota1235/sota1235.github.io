@@ -6,20 +6,20 @@ import SectionHeaderText from '../components/SectionHeaderText.astro'
 import MediaItem from '../components/MediaItem.astro'
 
 const podcasts = (await getCollection('podcasts'))
-  .sort((a, b) => (Date.parse(b.data.date) < Date.parse(a.data.date) ? -1 : 1))
+  .sort((a, b) => Date.parse(b.data.date) - Date.parse(a.data.date))
   .slice(0, 10)
 const slides = (await getCollection('slides'))
-  .sort((a, b) => (Date.parse(b.data.date) < Date.parse(a.data.date) ? -1 : 1))
+  .sort((a, b) => Date.parse(b.data.date) - Date.parse(a.data.date))
   .slice(0, 10)
 const other = (await getCollection('other'))
-  .sort((a, b) => (Date.parse(b.data.date) < Date.parse(a.data.date) ? -1 : 1))
+  .sort((a, b) => Date.parse(b.data.date) - Date.parse(a.data.date))
   .slice(0, 10)
 ---
 
 <Layout title="MEDIA" description="Media information of @sota1235">
   <PageHeaderText>MEDIA</PageHeaderText>
   <SectionHeaderText>PODCASTS</SectionHeaderText>
-  <div class="flex flex-row justify-start gap-10 overflow-y-scroll">
+  <div class="flex flex-row justify-start gap-10 overflow-x-auto">
     {
       podcasts.map((item) => (
         <MediaItem
@@ -34,13 +34,14 @@ const other = (await getCollection('other'))
   <div class="mt-2 text-right">
     <a
       href="/media/podcasts"
+      aria-label="View all podcasts"
       class="text-lg font-bold text-black hover:text-black_hover md:text-xl"
     >
       View All &rarr;
     </a>
   </div>
   <SectionHeaderText>SLIDES</SectionHeaderText>
-  <div class="flex flex-row justify-start gap-10 overflow-y-scroll">
+  <div class="flex flex-row justify-start gap-10 overflow-x-auto">
     {
       slides.map((item) => (
         <MediaItem
@@ -56,13 +57,14 @@ const other = (await getCollection('other'))
   <div class="mt-2 text-right">
     <a
       href="/media/slides"
+      aria-label="View all slides"
       class="text-lg font-bold text-black hover:text-black_hover md:text-xl"
     >
       View All &rarr;
     </a>
   </div>
   <SectionHeaderText>OTHER</SectionHeaderText>
-  <div class="flex flex-row justify-start gap-10 overflow-y-scroll">
+  <div class="flex flex-row justify-start gap-10 overflow-x-auto">
     {
       other.map((item) => (
         <MediaItem
@@ -78,6 +80,7 @@ const other = (await getCollection('other'))
   <div class="mt-2 mb-[200px] text-right">
     <a
       href="/media/other"
+      aria-label="View all other media"
       class="text-lg font-bold text-black hover:text-black_hover md:text-xl"
     >
       View All &rarr;
