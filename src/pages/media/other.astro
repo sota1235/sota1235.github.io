@@ -11,7 +11,9 @@ const other = (await getCollection('other')).sort((a, b) =>
 
 <Layout title="OTHER" description="Other media of @sota1235">
   <PageHeaderText>OTHER</PageHeaderText>
-  <div class="mb-[200px] flex flex-row flex-wrap justify-start gap-10">
+  <div
+    class="mb-[200px] grid grid-cols-2 justify-items-center gap-6 sm:grid-cols-3 md:grid-cols-4 md:gap-10"
+  >
     {
       other.map((item) => (
         <MediaItem
@@ -19,7 +21,7 @@ const other = (await getCollection('other')).sort((a, b) =>
           description={`${item.data.mediaTitle} / ${item.data.title}`}
           imageUrl={item.data.ogpImageUrl}
           link={item.data.link}
-          className="h-[120px] min-w-[155px] md:h-[160px] md:min-w-[213px]"
+          className="h-[120px] w-[155px] md:h-[160px] md:w-[213px]"
         />
       ))
     }
