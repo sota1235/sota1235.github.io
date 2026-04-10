@@ -38,8 +38,8 @@ importers:
         specifier: ^3.7.0
         version: 3.7.2
       '@sota1235/remark-link-bookmark':
-        specifier: 0.0.8
-        version: 0.0.8
+        specifier: 0.0.9
+        version: 0.0.9
       '@tailwindcss/vite':
         specifier: 4.2.2
         version: 4.2.2(vite@7.3.2(@types/node@25.5.2)(jiti@2.6.1)(lightningcss@1.32.0)(yaml@2.8.3))
@@ -104,15 +104,13 @@ importers:
 
 packages:
 
-  '@acemir/cssom@0.9.31':
-    resolution: {integrity: sha512-ZnR3GSaH+/vJ0YlHau21FjfLYjMpYVIzTD8M8vIEQvIGxeOXyXdzCI140rrCY862p/C/BbzWsjc1dgnM9mkoTA==}
-
   '@asamuzakjp/css-color@5.0.1':
     resolution: {integrity: sha512-2SZFvqMyvboVV1d15lMf7XiI3m7SDqXUuKaTymJYLN6dSGadqp+fVojqJlVoMlbZnlTmu3S0TLwLTJpvBMO1Aw==}
     engines: {node: ^20.19.0 || ^22.12.0 || >=24.0.0}
 
-  '@asamuzakjp/dom-selector@6.8.1':
-    resolution: {integrity: sha512-MvRz1nCqW0fsy8Qz4dnLIvhOlMzqDVBabZx6lH+YywFDdjXhMY37SmpV1XFX3JzG5GWHn63j6HX6QPr3lZXHvQ==}
+  '@asamuzakjp/dom-selector@7.0.9':
+    resolution: {integrity: sha512-r3ElRr7y8ucyN2KdICwGsmj19RoN13CLCa/pvGydghWK6ZzeKQ+TcDjVdtEZz2ElpndM5jXw//B9CEee0mWnVg==}
+    engines: {node: ^20.19.0 || ^22.12.0 || >=24.0.0}
 
   '@asamuzakjp/nwsapi@2.3.9':
     resolution: {integrity: sha512-n8GuYSrI9bF7FFZ/SjhwevlHc8xaVlb/7HmHelnc/PZXBD2ZR49NnN9sMMuDdEGPeeRQ5d0hqlSlEpgCX3Wl0Q==}
@@ -308,8 +306,13 @@ packages:
     peerDependencies:
       '@csstools/css-tokenizer': ^4.0.0
 
-  '@csstools/css-syntax-patches-for-csstree@1.1.0':
-    resolution: {integrity: sha512-H4tuz2nhWgNKLt1inYpoVCfbJbMwX/lQKp3g69rrrIMIYlFD9+zTykOKhNR8uGrAmbS/kT9n6hTFkmDkxLgeTA==}
+  '@csstools/css-syntax-patches-for-csstree@1.1.2':
+    resolution: {integrity: sha512-5GkLzz4prTIpoyeUiIu3iV6CSG3Plo7xRVOFPKI7FVEJ3mZ0A8SwK0XU3Gl7xAkiQ+mDyam+NNp875/C5y+jSA==}
+    peerDependencies:
+      css-tree: ^3.2.1
+    peerDependenciesMeta:
+      css-tree:
+        optional: true
 
   '@csstools/css-tokenizer@4.0.0':
     resolution: {integrity: sha512-QxULHAm7cNu72w97JUNCBFODFaXpbDg+dP8b/oWFAZ2MTRppA3U00Y2L1HqaS4J6yBqxwa/Y3nMBaxVKbB/NsA==}
@@ -933,8 +936,8 @@ packages:
     engines: {node: '>= 8.0.0'}
     hasBin: true
 
-  '@sota1235/remark-link-bookmark@0.0.8':
-    resolution: {integrity: sha512-zzMDBxyzx91husABjkwf9uqOJ14TDmTslEZIIQAAK1felPhAjkfu/w4XkqewNIWyW51VwmvMZ8lhhQaXr7TaTA==}
+  '@sota1235/remark-link-bookmark@0.0.9':
+    resolution: {integrity: sha512-LI5eXvrpmaLASr0HOEAbD6ayIMnfI9Sg89EtvtcBcl7IQOzSMVL6/hpCOJ+8BvhqNVla+XW6UZOXqQ6s9qpiRg==}
 
   '@tailwindcss/node@4.2.2':
     resolution: {integrity: sha512-pXS+wJ2gZpVXqFaUEjojq7jzMpTGf8rU6ipJz5ovJV6PUGmlJ+jvIwGrzdHdQ80Sg+wmQxUFuoW1UAAwHNEdFA==}
@@ -1573,10 +1576,6 @@ packages:
   csso@5.0.5:
     resolution: {integrity: sha512-0LrrStPOdJj+SPCCrGhzryycLjwcgUSHBtxNA8aIDxf0GLsRh1cKYhB00Gd1lDOS4yGH69+SNn13+TWbVHETFQ==}
     engines: {node: ^10 || ^12.20.0 || ^14.13.0 || >=15.0.0, npm: '>=7.0.0'}
-
-  cssstyle@6.2.0:
-    resolution: {integrity: sha512-Fm5NvhYathRnXNVndkUsCCuR63DCLVVwGOOwQw782coXFi5HhkXdu289l59HlXZBawsyNccXfWRYvLzcDCdDig==}
-    engines: {node: '>=20'}
 
   csstype@3.2.3:
     resolution: {integrity: sha512-z1HGKcYy2xA8AGQfwrn0PAy+PB7X/GSj3UVJW9qKyn43xWa+gl5nXmU4qqLMRzWVLFC8KusUX8T/0kCiOYpAIQ==}
@@ -2223,9 +2222,9 @@ packages:
     resolution: {integrity: sha512-qQKT4zQxXl8lLwBtHMWwaTcGfFOZviOJet3Oy/xmGk2gZH677CJM9EvtfdSkgWcATZhj/55JZ0rmy3myCT5lsA==}
     hasBin: true
 
-  jsdom@28.1.0:
-    resolution: {integrity: sha512-0+MoQNYyr2rBHqO1xilltfDjV9G7ymYGlAUazgcDLQaUf8JDHbuGwsxN6U9qWaElZ4w1B2r7yEGIL3GdeW3Rug==}
-    engines: {node: ^20.19.0 || ^22.12.0 || >=24.0.0}
+  jsdom@29.0.1:
+    resolution: {integrity: sha512-z6JOK5gRO7aMybVq/y/MlIpKh8JIi68FBKMUtKkK2KH/wMSRlCxQ682d08LB9fYXplyY/UXG8P4XXTScmdjApg==}
+    engines: {node: ^20.19.0 || ^22.13.0 || >=24.0.0}
     peerDependencies:
       canvas: ^3.0.0
     peerDependenciesMeta:
@@ -3472,11 +3471,6 @@ packages:
   typescript-auto-import-cache@0.3.6:
     resolution: {integrity: sha512-RpuHXrknHdVdK7wv/8ug3Fr0WNsNi5l5aB8MYYuXhq2UH5lnEB1htJ1smhtD5VeCsGr2p8mUDtd83LCQDFVgjQ==}
 
-  typescript@5.9.3:
-    resolution: {integrity: sha512-jl1vZzPDinLr9eUt3J/t7V6FgNEw9QjvBPdysz9KfQDD41fQrC2Y4vKQdiaUpFT4bXlb1RHhLpp8wtm6M5TgSw==}
-    engines: {node: '>=14.17'}
-    hasBin: true
-
   typescript@6.0.2:
     resolution: {integrity: sha512-bGdAIrZ0wiGDo5l8c++HWtbaNCWTS4UTv7RaTH/ThVIgjkveJt83m74bBHMJkuCbslY8ixgLBVZJIOiQlQTjfQ==}
     engines: {node: '>=14.17'}
@@ -3954,8 +3948,6 @@ packages:
 
 snapshots:
 
-  '@acemir/cssom@0.9.31': {}
-
   '@asamuzakjp/css-color@5.0.1':
     dependencies:
       '@csstools/css-calc': 3.1.1(@csstools/css-parser-algorithms@4.0.0(@csstools/css-tokenizer@4.0.0))(@csstools/css-tokenizer@4.0.0)
@@ -3964,13 +3956,12 @@ snapshots:
       '@csstools/css-tokenizer': 4.0.0
       lru-cache: 11.3.3
 
-  '@asamuzakjp/dom-selector@6.8.1':
+  '@asamuzakjp/dom-selector@7.0.9':
     dependencies:
       '@asamuzakjp/nwsapi': 2.3.9
       bidi-js: 1.0.3
       css-tree: 3.2.1
       is-potential-custom-element-name: 1.0.1
-      lru-cache: 11.3.3
 
   '@asamuzakjp/nwsapi@2.3.9': {}
 
@@ -4281,7 +4272,9 @@ snapshots:
     dependencies:
       '@csstools/css-tokenizer': 4.0.0
 
-  '@csstools/css-syntax-patches-for-csstree@1.1.0': {}
+  '@csstools/css-syntax-patches-for-csstree@1.1.2(css-tree@3.2.1)':
+    optionalDependencies:
+      css-tree: 3.2.1
 
   '@csstools/css-tokenizer@4.0.0': {}
 
@@ -4801,15 +4794,15 @@ snapshots:
       fflate: 0.7.4
       string.prototype.codepointat: 0.2.1
 
-  '@sota1235/remark-link-bookmark@0.0.8':
+  '@sota1235/remark-link-bookmark@0.0.9':
     dependencies:
       '@types/mdast': 4.0.4
       clsx: 2.1.1
       debug: 4.4.3
       dompurify: 3.3.3
-      jsdom: 28.1.0
+      jsdom: 29.0.1
       open-graph-scraper: 6.11.0
-      typescript: 5.9.3
+      typescript: 6.0.2
       unified: 11.0.5
       unist-util-visit: 5.1.0
     transitivePeerDependencies:
@@ -5544,13 +5537,6 @@ snapshots:
   csso@5.0.5:
     dependencies:
       css-tree: 2.2.1
-
-  cssstyle@6.2.0:
-    dependencies:
-      '@asamuzakjp/css-color': 5.0.1
-      '@csstools/css-syntax-patches-for-csstree': 1.1.0
-      css-tree: 3.2.1
-      lru-cache: 11.3.3
 
   csstype@3.2.3: {}
 
@@ -6321,19 +6307,19 @@ snapshots:
     dependencies:
       argparse: 2.0.1
 
-  jsdom@28.1.0:
+  jsdom@29.0.1:
     dependencies:
-      '@acemir/cssom': 0.9.31
-      '@asamuzakjp/dom-selector': 6.8.1
+      '@asamuzakjp/css-color': 5.0.1
+      '@asamuzakjp/dom-selector': 7.0.9
       '@bramus/specificity': 2.4.2
+      '@csstools/css-syntax-patches-for-csstree': 1.1.2(css-tree@3.2.1)
       '@exodus/bytes': 1.15.0
-      cssstyle: 6.2.0
+      css-tree: 3.2.1
       data-urls: 7.0.0
       decimal.js: 10.6.0
       html-encoding-sniffer: 6.0.0
-      http-proxy-agent: 7.0.2
-      https-proxy-agent: 7.0.6
       is-potential-custom-element-name: 1.0.1
+      lru-cache: 11.3.3
       parse5: 8.0.0
       saxes: 6.0.0
       symbol-tree: 3.2.4
@@ -6346,7 +6332,6 @@ snapshots:
       xml-name-validator: 5.0.0
     transitivePeerDependencies:
       - '@noble/hashes'
-      - supports-color
 
   jsesc@3.1.0: {}
 
@@ -7954,8 +7939,6 @@ snapshots:
   typescript-auto-import-cache@0.3.6:
     dependencies:
       semver: 7.7.4
-
-  typescript@5.9.3: {}
 
   typescript@6.0.2: {}
 
