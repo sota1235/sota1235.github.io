@@ -51,7 +51,7 @@
     }
   },
   "devDependencies": {
-    "@astrojs/partytown": "2.1.6",
+    "@astrojs/partytown": "2.1.7",
     "@axe-core/playwright": "4.11.1",
     "@lhci/cli": "0.15.1",
     "@playwright/test": "1.59.1",
