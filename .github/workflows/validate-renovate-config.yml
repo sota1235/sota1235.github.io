@@ -1,10 +1,14 @@
 name: Check renovate config
 
 on:
-  push:
+  pull_request:
     paths:
       - renovate.json
       - .node-version
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   validate-renovate-config:

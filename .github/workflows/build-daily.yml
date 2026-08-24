@@ -6,22 +6,27 @@ on:
   workflow_dispatch:
 
 jobs:
-  check-diff:
-    timeout-minutes: 10
+  # Single job: the previous check-diff / build split built the whole site twice
+  # (once to detect a diff, once to commit it) and paid for two runners.
+  build:
+    timeout-minutes: 20
     permissions:
       contents: read
     runs-on: ubuntu-latest
-    outputs:
-      has_diff: ${{ steps.check-diff.outputs.has_diff }}
+    environment: main
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
       - uses: ./.github/actions/setup-node
-      - name: Check diff
+
+      # `astro build` runs the fetch-media-data integration, which is what may
+      # produce new content files. `astro check` is not needed here; the PR this
+      # job opens runs the full CI workflow anyway.
+      - name: Build site and check diff
         id: check-diff
         run: |
-          pnpm run build
+          pnpm exec astro build
           if [[ -n $(git status --porcelain) ]]; then
             echo "Changes detected"
             git diff .
@@ -31,21 +36,8 @@ jobs:
             echo "has_diff=false" >> "$GITHUB_OUTPUT"
           fi
 
-  build:
-    needs: check-diff
-    runs-on: ubuntu-latest
-    timeout-minutes: 10
-    permissions:
-      contents: read
-    if: ${{ needs.check-diff.outputs.has_diff == 'true' }}
-    environment: main
-    steps:
-      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-        with:
-          persist-credentials: false
-      - uses: ./.github/actions/setup-node
-
       - uses: actions/create-github-app-token@bcd2ba49218906704ab6c1aa796996da409d3eb1 # v3.2.0
+        if: steps.check-diff.outputs.has_diff == 'true'
         id: app-token
         with:
           app-id: ${{ secrets.GH_APP_SOTA1235_PR_EDITOR_APP_ID }}
@@ -56,12 +48,12 @@ jobs:
           permission-contents: write
           permission-pull-requests: write
 
-      - name: Build site
+      - name: Create pull request
+        if: steps.check-diff.outputs.has_diff == 'true'
         env:
           GH_TOKEN: ${{ steps.app-token.outputs.token }}
           REPO: ${{ github.repository }}
         run: |
-          pnpm run build
           DATE="$(date +%Y%m%d)"
           BRANCH_NAME="feat-build-site-daily-$DATE"
 

@@ -7,6 +7,10 @@ on:
       - .github/actions/*
       - aqua.yaml
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   check-workflow-files:
     timeout-minutes: 10
